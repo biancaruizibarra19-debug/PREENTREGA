@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biblioteca UX | Cúspides</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,300..900&family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="library-page">
+    <div class="cursor-follower" aria-hidden="true"></div>
+    <header class="site-header" data-header>
+      <a class="brand" href="index.html" aria-label="Cúspides inicio">
+        <img src="assets/images/LOGO.png" alt="Cúspides" />
+      </a>
+      <a class="search-link" href="index.html#cursos" aria-label="Buscar cursos">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m16.5 16.5 4 4"></path></svg>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" data-menu-toggle>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="main-nav" data-nav>
+        <a href="index.html#home">Home</a>
+        <a href="index.html#beneficios">Beneficios</a>
+        <a href="index.html#nosotros">Nosotros</a>
+        <a href="index.html#equipo">Equipo</a>
+        <div class="nav-course-menu">
+          <button class="nav-course-trigger" type="button" aria-expanded="false" data-nav-course-toggle>
+            <span>Cursos</span>
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4"></path></svg>
+          </button>
+          <div class="nav-course-dropdown" aria-label="Cursos disponibles">
+            <a href="index.html#cursos">Programa Base</a>
+            <a class="is-ascenso" href="programa-ascenso.html" data-detail-page-link>Programa Ascenso</a>
+            <a href="index.html#cursos">Programa Cúspide</a>
+          </div>
+        </div>
+        <a href="index.html#testimonios">Testimonios</a>
+        <a href="index.html#contacto">Contacto</a>
+        <a href="index.html#ubicacion">Ubicación</a>
+        <a href="index.html#preguntas">Preguntas</a>
+        <a class="active" href="biblioteca.html">Biblioteca</a>
+      </nav>
+    </header>
+
+    <main id="home" class="library-main">
+      <section class="library-hero-simple">
+        <div class="library-hero-copy" data-animate>
+          <p class="eyebrow">Biblioteca visual</p>
+          <h1>Biblioteca UX</h1>
+        </div>
+      </section>
+
+      <section class="library-showcase section-pad" id="identidad">
+        <div class="library-showcase-head" data-animate>
+          <h2>Identidad</h2>
+        </div>
+        <div class="library-swatch-grid" data-animate>
+          <article class="library-swatch deep"><span>#021F28</span></article>
+          <article class="library-swatch navy"><span>#052833</span></article>
+          <article class="library-swatch steel"><span>#607187</span></article>
+          <article class="library-swatch orange"><span>#F5A11A</span></article>
+          <article class="library-font-card title-font"><span>Título</span><strong>CÚSPIDES</strong></article>
+          <article class="library-font-card body-font"><span>Texto</span><strong>Google Sans Flex</strong></article>
+        </div>
+      </section>
+
+      <section class="library-showcase section-pad" id="componentes">
+        <div class="library-showcase-head" data-animate>
+          <h2>Componentes</h2>
+        </div>
+        <div class="component-gallery">
+          <article class="component-tile buttons-tile" data-animate>
+            <span>Botones</span>
+            <div class="button-row">
+              <a class="outline-btn" href="index.html#cursos">Ver cursos</a>
+              <a class="outline-btn dark" href="programa-ascenso.html" data-detail-page-link>Detalle</a>
+            </div>
+          </article>
+
+          <article class="component-tile nav-tile" data-animate>
+            <span>Navegación</span>
+            <div class="mini-nav">
+              <a class="active" href="index.html#home">Home</a>
+              <a href="index.html#cursos">Cursos</a>
+              <a href="biblioteca.html">Biblioteca</a>
+              <a class="mini-search" href="index.html#cursos" aria-label="Buscar">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m16.5 16.5 4 4"></path></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="component-tile course-tile" data-animate>
+            <span>Curso</span>
+            <img src="assets/images/card4.jpg" alt="Cordada en ascenso" />
+            <h3>Programa Ascenso</h3>
+            <div class="course-price" aria-label="Precio con descuento: $260.000. Precio anterior: $310.000.">
+              <span>$310.000</span>
+              <b>$260.000</b>
+            </div>
+          </article>
+
+          <article class="component-tile benefit-tile" data-animate>
+            <span>Iconos</span>
+            <div class="benefit-icons-row">
+              <img src="assets/images/icono1.png" alt="" />
+              <img src="assets/images/icono4.png" alt="" />
+              <img src="assets/images/icono7.png" alt="" />
+              <img src="assets/images/icono9.png" alt="" />
+            </div>
+          </article>
+
+          <article class="component-tile form-tile" data-animate>
+            <span>Formulario</span>
+            <label><small>Nombre</small><input type="text" value="Bianca Ruiz" aria-label="Nombre" /></label>
+            <label><small>Programa</small><select aria-label="Programa"><option>Programa Ascenso</option></select></label>
+            <button class="outline-btn" type="button">Enviar</button>
+          </article>
+
+          <article class="component-tile coach-tile" data-animate>
+            <span>Perfil</span>
+            <img src="assets/images/bianca.jpg" alt="Bianca Ruiz escalando hielo" />
+            <h3>Bianca Ruiz</h3>
+            <p>Directora de Preparación Física</p>
+          </article>
+
+          <article class="component-tile testimonial-tile" data-animate>
+            <span>Testimonio</span>
+            <div class="person"><span></span><div><h3>Caterina Loyato</h3><p>★★★★★</p></div><b>“</b></div>
+            <p>Llegué buscando mejorar mi resistencia y terminé descubriendo una fortaleza física y mental nueva.</p>
+          </article>
+
+          <article class="component-tile faq-tile" data-animate>
+            <span>Preguntas</span>
+            <details open>
+              <summary>¿Qué programa me conviene?</summary>
+              <p>Base para empezar, Ascenso para crecer y Cúspide para autonomía técnica.</p>
+            </details>
+            <details>
+              <summary>¿Necesito experiencia?</summary>
+              <p>Depende del programa elegido.</p>
+            </details>
+          </article>
+
+          <article class="component-tile kit-tile" data-animate>
+            <span>Kit</span>
+            <div class="kit-mini-grid">
+              <img src="assets/images/tool4.png" alt="" />
+              <img src="assets/images/tool6.png" alt="" />
+              <img src="assets/images/tool8.png" alt="" />
+              <img src="assets/images/tool9.png" alt="" />
+              <img src="assets/images/tool12.png" alt="" />
+              <img src="assets/images/tool14.png" alt="" />
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <h2>Cúspides</h2>
+          <p>Preparación física, técnica y mental para afrontar desafíos reales en la montaña.</p>
+          <p>FADU UBA<br />Bellucia 2, 2026<br />Teléfono: +11 3000 1234<br />Email: cuspide@gmail.com</p>
+          <div class="socials">
+            <a href="#" aria-label="YouTube de Cúspides">
+              <img src="assets/images/redes1.png" alt="" />
+            </a>
+            <a href="#" aria-label="Instagram de Cúspides">
+              <img src="assets/images/redes2.png" alt="" />
+            </a>
+            <a href="#" aria-label="Facebook de Cúspides">
+              <img src="assets/images/redes3.png" alt="" />
+            </a>
+          </div>
+        </div>
+        <nav class="footer-links" aria-label="Enlaces del footer">
+          <div>
+            <h3>Explorar</h3>
+            <a href="index.html#home">Home</a>
+            <a href="index.html#nosotros">Sobre nosotros</a>
+            <a href="biblioteca.html">Biblioteca UX</a>
+            <a href="index.html#testimonios">Testimonios</a>
+          </div>
+          <div>
+            <h3>Programas</h3>
+            <a href="index.html#cursos">Programa Base</a>
+            <a href="programa-ascenso.html" data-detail-page-link>Programa Ascenso</a>
+            <a href="index.html#cursos">Programa Cúspide</a>
+            <a href="index.html#preguntas">Preguntas frecuentes</a>
+          </div>
+          <div>
+            <h3>Biblioteca</h3>
+            <a href="#identidad">Identidad</a>
+            <a href="#componentes">Componentes</a>
+            <a href="#componentes">Elementos UI</a>
+            <a href="index.html#contacto">Contacto</a>
+          </div>
+          <div>
+            <h3>Ubicación</h3>
+            <a href="index.html#ubicacion">FADU UBA</a>
+            <a href="index.html#ubicacion">Ciudad Universitaria</a>
+            <a href="index.html#ubicacion">Pabellón 3</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=FADU%20UBA%20Ciudad%20Universitaria%20Buenos%20Aires" target="_blank" rel="noreferrer">Abrir en Maps</a>
+          </div>
+        </nav>
+      </div>
+      <p class="copyright">Copyright Cúspides todos los derechos reservados<br />Diseñado por Bianca Ruiz Ibarra</p>
+    </footer>
+
+    <a class="back-top" href="#home" aria-label="Volver al inicio">
+      <svg class="back-top-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 5 5.6 11.4l1.4 1.4 4-4V20h2V8.8l4 4 1.4-1.4L12 5Z"></path>
+      </svg>
+    </a>
+
+    <script src="script.js"></script>
+  </body>
+</html>

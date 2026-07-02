@@ -1,0 +1,673 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Programa Ascenso | Cúspides</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,300..900&family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="program-detail-page">
+    <div class="cursor-follower" aria-hidden="true"></div>
+    <header class="site-header" data-header>
+      <a class="brand" href="index.html" aria-label="Cúspides inicio">
+        <img src="assets/images/LOGO.png" alt="Cúspides" />
+      </a>
+      <a class="search-link" href="index.html#cursos" aria-label="Buscar cursos">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m16.5 16.5 4 4"></path></svg>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" data-menu-toggle>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="main-nav" data-nav>
+        <a href="index.html#home">Home</a>
+        <a href="index.html#beneficios">Beneficios</a>
+        <a href="index.html#nosotros">Nosotros</a>
+        <a href="index.html#equipo">Equipo</a>
+        <div class="nav-course-menu">
+          <button class="nav-course-trigger active" type="button" aria-expanded="false" data-nav-course-toggle>
+            <span>Cursos</span>
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4"></path></svg>
+          </button>
+          <div class="nav-course-dropdown" aria-label="Cursos disponibles">
+            <a href="index.html#cursos">Programa Base</a>
+            <a class="is-ascenso" href="programa-ascenso.html" data-detail-page-link>Programa Ascenso</a>
+            <a href="index.html#cursos">Programa Cúspide</a>
+          </div>
+        </div>
+        <a href="#testimonios">Testimonios</a>
+        <a href="#contacto">Contacto</a>
+        <a href="#ubicacion">Ubicación</a>
+        <a href="#preguntas">Preguntas</a>
+        <a href="biblioteca.html">Biblioteca</a>
+      </nav>
+    </header>
+
+    <main id="home">
+      <section class="detail-hero">
+        <div class="detail-hero-gallery" aria-hidden="true" data-detail-hero-gallery>
+          <img class="is-active" src="assets/images/HERODETALLE.jpg" alt="" />
+          <img src="assets/images/HERODETALLE4.jpg" alt="" />
+          <img class="flip-horizontal" src="assets/images/HERODETALLE5.jpg" alt="" />
+        </div>
+        <div class="detail-hero-copy" data-animate>
+          <p class="detail-breadcrumb">Home / Cursos / Programa Ascenso</p>
+          <p class="eyebrow">Fase 02</p>
+          <h1>Programa Ascenso</h1>
+          <p>El segundo paso de tu camino. Construimos sobre la base para<br />llevar tu rendimiento al siguiente nivel, combinando técnica,<br />fuerza y enfoque mental para alcanzar tus nuevas cumbres.</p>
+          <div class="detail-hero-actions">
+            <a class="outline-btn small" href="#plan">Ver plan</a>
+            <a class="outline-btn" href="#contacto">Inscribirme</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="detail-stats section-pad" aria-label="Datos principales del programa">
+        <article class="benefit" data-animate>
+          <img src="assets/images/icono6.png" alt="" aria-hidden="true" />
+          <h3><span>Nivel</span><span>intermedio</span></h3>
+        </article>
+        <article class="benefit" data-animate>
+          <img src="assets/images/icono7.png" alt="" aria-hidden="true" />
+          <h3><span>Duración</span><span>8 semanas</span></h3>
+        </article>
+        <article class="benefit" data-animate>
+          <img src="assets/images/icono8.png" alt="" aria-hidden="true" />
+          <h3><span>Modalidad</span><span>presencial</span></h3>
+        </article>
+        <article class="benefit" data-animate>
+          <img src="assets/images/icono9.png" alt="" aria-hidden="true" />
+          <h3><span>Objetivo</span><span class="no-wrap">más rendimiento</span></h3>
+        </article>
+      </section>
+
+      <section class="program-summary section-pad" id="programa">
+        <div class="program-copy" data-animate>
+          <h2>Programa Ascenso</h2>
+          <p>El programa ascenso está diseñado para llevar tu entrenamiento al siguiente nivel. A través de un plan estructurado de 8 semanas, vas a desarrollar mayor resistencia, fuerza y habilidades técnicas específicas para moverte con confianza en terrenos desafiantes.</p>
+          <p>Integramos entrenamiento físico, técnica en montaña y preparación mental, con el acompañamiento de un equipo de profesionales y una comunidad que te impulsa a seguir creciendo.</p>
+          <div class="included-list">
+            <h3>Qué incluye el programa</h3>
+            <ul>
+              <li>Planes para mejorar tu capacidad aeróbica.</li>
+              <li>Desarrollo de habilidades para terrenos variables.</li>
+              <li>Rutinas y hábitos para fortalecer tu enfoque.</li>
+              <li>Fuerza, movilidad y potencia para escalar la montaña.</li>
+              <li>Feedback profesional que te impulsa cada semana.</li>
+            </ul>
+          </div>
+        </div>
+
+        <aside class="program-price-card" data-animate>
+          <span>Programa Ascenso</span>
+          <small>Fase 02</small>
+          <div class="price-lockup">
+            <em>$310.000</em>
+            <strong>$260.000</strong>
+          </div>
+          <ul>
+            <li>Intensidad intermedia</li>
+            <li>Modalidad presencial</li>
+            <li>Duración 8 semanas</li>
+            <li>Fecha de inicio: 13/07/26</li>
+          </ul>
+          <p>Aprendé orientación, seguridad, equipamiento y habilidades esenciales.</p>
+          <a class="outline-btn" href="#contacto">Elegir programa</a>
+        </aside>
+      </section>
+
+      <section class="week-plan section-pad" id="plan">
+        <div class="section-heading" data-animate>
+          <h2>Plan de 8 semanas</h2>
+        </div>
+        <div class="week-carousel" data-animate data-week-carousel>
+          <div class="week-track">
+            <article>
+              <img src="assets/images/card4.jpg" alt="Cordada en ascenso" />
+              <span>1</span>
+              <h3>Semana 1</h3>
+              <strong>Adaptación</strong>
+              <p>Evaluación inicial y preparación progresiva.</p>
+            </article>
+            <article>
+              <img src="assets/images/card5.jpg" alt="Ascenso técnico en nieve" />
+              <span>2</span>
+              <h3>Semana 2</h3>
+              <strong>Resistencia</strong>
+              <p>Desarrollo de capacidad<br />aeróbica y recuperación.</p>
+            </article>
+            <article>
+              <img src="assets/images/nosotros1.jpg" alt="Montañistas avanzando en nieve" />
+              <span>3</span>
+              <h3>Semana 3</h3>
+              <strong>Estabilidad</strong>
+              <p>Potencia, equilibrio<br />y control corporal.</p>
+            </article>
+            <article>
+              <img src="assets/images/card2.jpg" alt="Entrenamiento sobre nieve" />
+              <span>4</span>
+              <h3>Semana 4</h3>
+              <strong>Técnica</strong>
+              <p>Fundamentos de seguridad<br />y desplazamiento.</p>
+            </article>
+            <article>
+              <img src="assets/images/card3.jpg" alt="Alpinista avanzando en montaña" />
+              <span>5</span>
+              <h3>Semana 5</h3>
+              <strong>Rendimiento</strong>
+              <p>Incremento de intensidad<br />y rendimiento.</p>
+            </article>
+            <article>
+              <img src="assets/images/card4.jpg" alt="Cordada en ascenso" />
+              <span>6</span>
+              <h3>Semana 6</h3>
+              <strong>Terreno</strong>
+              <p>Aplicación práctica en escenarios reales.</p>
+            </article>
+            <article>
+              <img src="assets/images/card2.jpg" alt="Entrenamiento sobre nieve" />
+              <span>7</span>
+              <h3>Semana 7</h3>
+              <strong>Simulación</strong>
+              <p>Integración de habilidades en una expedición simulada.</p>
+            </article>
+            <article>
+              <img src="assets/images/card3.jpg" alt="Alpinista avanzando en montaña" />
+              <span>8</span>
+              <h3>Semana 8</h3>
+              <strong>Evaluación</strong>
+              <p>Medición final y preparación para el desafío.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="kit-section" aria-label="Kit de esenciales">
+        <div class="kit-inner">
+          <h2 id="kit-title" data-animate>Kit de esenciales</h2>
+          <div class="kit-board" data-animate>
+            <article class="kit-item helmet">
+              <img src="assets/images/tool4.png" alt="" />
+            </article>
+            <article class="kit-item lantern">
+              <img src="assets/images/tool10.png" alt="" />
+            </article>
+            <article class="kit-item goggles">
+              <img src="assets/images/tool7.png" alt="" />
+            </article>
+            <article class="kit-item rope">
+              <img src="assets/images/tool6.png" alt="" />
+            </article>
+            <article class="kit-item pack">
+              <img src="assets/images/tool2.png" alt="" />
+            </article>
+            <article class="kit-item harness">
+              <img src="assets/images/tool1.png" alt="" />
+            </article>
+            <article class="kit-item axe">
+              <img src="assets/images/tool8.png" alt="" />
+            </article>
+            <article class="kit-item jacket">
+              <img src="assets/images/tool5.png" alt="" />
+            </article>
+            <article class="kit-item boots">
+              <img src="assets/images/tool9.png" alt="" />
+            </article>
+            <article class="kit-item crampons">
+              <img src="assets/images/tool11.png" alt="" />
+            </article>
+            <article class="kit-item gloves">
+              <img src="assets/images/tool15.png" alt="" />
+            </article>
+            <article class="kit-item gps">
+              <img src="assets/images/tool14.png" alt="" />
+            </article>
+            <article class="kit-item carabiner">
+              <img src="assets/images/tool3.png" alt="" />
+            </article>
+            <article class="kit-item map">
+              <img src="assets/images/tool13.png" alt="" />
+            </article>
+            <article class="kit-item firstaid">
+              <img src="assets/images/tool12.png" alt="" />
+            </article>
+            <div class="kit-label helmet-copy">
+              <h3>Casco</h3>
+              <p>Protege contra caídas, golpes y desprendimientos de roca o hielo.</p>
+            </div>
+            <div class="kit-label lantern-copy">
+              <h3>Linterna frontal</h3>
+              <p>Esencial para salidas tempranas, retrasos o emergencias.</p>
+            </div>
+            <div class="kit-label goggles-copy">
+              <h3>Antiparras</h3>
+              <p>Necesarias frente a viento,<br />nieve o tormentas.</p>
+            </div>
+            <div class="kit-label rope-copy">
+              <h3>Cuerda dinámica</h3>
+              <p>Asegura al equipo durante ascensos o cruces complejos.</p>
+            </div>
+            <div class="kit-label pack-copy">
+              <h3>Mochila</h3>
+              <p>Permite transportar el material<br />técnico imprescindible para avanzar.</p>
+            </div>
+            <div class="kit-label harness-copy">
+              <h3>Arnés</h3>
+              <p>Necesario para aseguramiento,<br />progresión y rescate.</p>
+            </div>
+            <div class="kit-label axe-copy">
+              <h3>Piolet</h3>
+              <p>Herramienta clave para equilibrio<br />y progresión en pendientes.</p>
+            </div>
+            <div class="kit-label jacket-copy">
+              <h3>Campera</h3>
+              <p>Impermeable que protege<br />de nieve, lluvia y viento.</p>
+            </div>
+            <div class="kit-label boots-copy">
+              <h3>Botas rígidas</h3>
+              <p>Brindan estabilidad y<br />protección térmica.</p>
+            </div>
+            <div class="kit-label crampons-copy">
+              <h3>Crampones</h3>
+              <p>Permiten caminar sobre nieve dura o hielo con mayor seguridad.</p>
+            </div>
+            <div class="kit-label gloves-copy">
+              <h3>Guantes</h3>
+              <p>Protegen las manos<br />del frío extremo.</p>
+            </div>
+            <div class="kit-label gps-copy">
+              <h3>GPS</h3>
+              <p>Ayuda a seguir rutas<br />en terrenos complejos.</p>
+            </div>
+            <div class="kit-label carabiner-copy">
+              <h3>Mosquetón</h3>
+              <p>Conectan cuerda, arnés<br />y sistemas de anclaje.</p>
+            </div>
+            <div class="kit-label map-copy">
+              <h3>Mapa y brújula</h3>
+              <p>Respaldo fundamental si falla la tecnología.</p>
+            </div>
+            <div class="kit-label firstaid-copy">
+              <h3>Botiquín</h3>
+              <p>Para heridas, ampollas, dolor, vendas y emergencias básicas.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="requirements section-pad">
+        <div class="requirements-copy" data-animate>
+          <h2>Requisitos</h2>
+          <p>¿Es este programa para vos? no todos los perfiles ingresan al Programa ASCENSO. Antes de comenzar, realizamos una entrevista individual para conocer tu experiencia, evaluar tu compromiso y determinar si estás listo para afrontar una preparación técnica de alta exigencia.</p>
+          <p>La montaña no admite improvisaciones, nuestro proceso tampoco.</p>
+          <div class="included-list requirements-list">
+            <h3>Requisitos técnicos</h3>
+            <ul>
+              <li>Capacidad para caminar largas distancias con carga.</li>
+              <li>Resistencia a entrenamientos de alta exigencia.</li>
+              <li>Tolerancia al frío, fatiga y cambios de ritmo.</li>
+              <li>Experiencia previa en trekking o montaña.</li>
+              <li>Compromiso absoluto con normas de seguridad.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="other-plans" data-animate>
+          <h2>Otros planes</h2>
+          <div class="plan-card-grid" data-plan-stack>
+            <article class="mini-plan is-active" tabindex="0" data-plan-card>
+              <span>Programa Base</span>
+              <small>Fase 01</small>
+              <div class="price-lockup">
+                <em>$220.000</em>
+                <strong>$180.000</strong>
+              </div>
+              <ul>
+                <li>Intensidad baja</li>
+                <li>Modalidad presencial</li>
+                <li>Duración 6 semanas</li>
+                <li>Fecha de inicio: 01/06/26</li>
+              </ul>
+              <p>Desarrollá disciplina, resiliencia y concentración para enfrentar la montaña.</p>
+              <a class="outline-btn small" href="index.html#cursos">Ver programa</a>
+            </article>
+            <article class="mini-plan is-behind" tabindex="0" data-plan-card>
+              <span>Programa Cúspide</span>
+              <small>Fase 03</small>
+              <div class="price-lockup">
+                <em>$450.000</em>
+                <strong>$390.000</strong>
+              </div>
+              <ul>
+                <li>Intensidad alta</li>
+                <li>Modalidad presencial</li>
+                <li>Duración 10 semanas</li>
+                <li>Fecha de inicio: 07/09/26</li>
+              </ul>
+              <p>Integra preparación física, mental y técnica para afrontar expediciones reales.</p>
+              <a class="outline-btn small" href="index.html#cursos">Ver programa</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="detail-team section-pad" id="equipo">
+        <div class="section-heading" data-animate>
+          <h2>Equipo Ascenso</h2>
+        </div>
+        <div class="coach-list detail-team-list" data-animate>
+          <div class="coach-viewport">
+            <div class="coach-slide detail-team-grid" data-detail-team-track>
+              <article class="coach-card" data-animate>
+                <div class="coach-card-inner">
+                  <div class="coach-card-face coach-card-front">
+                    <img src="assets/images/agustin.jpg" alt="Agustín Scattolin escalando en la montaña" />
+                    <div class="coach-card-copy">
+                      <h3>Agustín Scattolin</h3>
+                      <p>Guía de Alta Montaña</p>
+                    </div>
+                  </div>
+                  <div class="coach-card-face coach-card-back">
+                    <div class="profile-card">
+                      <div class="profile-top">
+                        <span class="profile-avatar">AS</span>
+                      </div>
+                      <div class="profile-body">
+                        <span class="profile-handle">@agustin.sct</span>
+                        <h3><span>Agustín</span><span>Scattolin</span></h3>
+                        <p>Guía de montaña. Lidera entrenamientos en terreno y acompaña procesos de adaptación a entornos de alta exigencia.</p>
+                      </div>
+                      <div class="profile-stats">
+                        <div><strong>96</strong><span>proyectos</span></div>
+                        <div><strong>9K</strong><span>seguidores</span></div>
+                        <div><strong>4.8</strong><span>rating</span></div>
+                      </div>
+                      <button class="profile-action" type="button" aria-pressed="false">seguir</button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <article class="coach-card" data-animate>
+                <div class="coach-card-inner">
+                  <div class="coach-card-face coach-card-front">
+                    <img src="assets/images/card2.jpg" alt="Julia Mansilla en una pared nevada" />
+                    <div class="coach-card-copy">
+                      <h3>Julia Mansilla</h3>
+                      <p>Entrenadora de Resistencia</p>
+                    </div>
+                  </div>
+                  <div class="coach-card-face coach-card-back">
+                    <div class="profile-card">
+                      <div class="profile-top">
+                        <span class="profile-avatar">JM</span>
+                      </div>
+                      <div class="profile-body">
+                        <span class="profile-handle">@julia.mansilla</span>
+                        <h3><span>Julia</span><span>Mansilla</span></h3>
+                        <p>Entrenadora de resistencia. Especialista en capacidad aeróbica, fuerza funcional y rendimiento sostenido en ascensos prolongados.</p>
+                      </div>
+                      <div class="profile-stats">
+                        <div><strong>114</strong><span>proyectos</span></div>
+                        <div><strong>15K</strong><span>seguidores</span></div>
+                        <div><strong>4.9</strong><span>rating</span></div>
+                      </div>
+                      <button class="profile-action" type="button" aria-pressed="false">seguir</button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <article class="coach-card" data-animate>
+                <div class="coach-card-inner">
+                  <div class="coach-card-face coach-card-front">
+                    <img src="assets/images/card3.jpg" alt="Tomás Rodríguez avanzando sobre nieve" />
+                    <div class="coach-card-copy">
+                      <h3>Tomás Rodríguez</h3>
+                      <p>Instructor de Técnica Alpina</p>
+                    </div>
+                  </div>
+                  <div class="coach-card-face coach-card-back">
+                    <div class="profile-card">
+                      <div class="profile-top">
+                        <span class="profile-avatar">TR</span>
+                      </div>
+                      <div class="profile-body">
+                        <span class="profile-handle">@tomas.rodriguez</span>
+                        <h3><span>Tomás</span><span>Rodríguez</span></h3>
+                        <p>Instructor de técnica alpina. Forma en desplazamiento, uso de equipamiento y seguridad técnica previa a la montaña.</p>
+                      </div>
+                      <div class="profile-stats">
+                        <div><strong>87</strong><span>proyectos</span></div>
+                        <div><strong>8K</strong><span>seguidores</span></div>
+                        <div><strong>4.7</strong><span>rating</span></div>
+                      </div>
+                      <button class="profile-action" type="button" aria-pressed="false">seguir</button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="dots detail-team-dots" aria-label="Equipo Ascenso">
+            <button class="on" type="button" aria-label="Ver instructor 1" data-detail-team-dot></button>
+            <button type="button" aria-label="Ver instructor 2" data-detail-team-dot></button>
+            <button type="button" aria-label="Ver instructor 3" data-detail-team-dot></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonials section-pad" id="testimonios">
+        <div class="section-heading" data-animate>
+          <h2>Testimonios</h2>
+          <p>Conocé las experiencias de quienes llevaron su preparación al siguiente nivel.</p>
+        </div>
+        <div class="testimonial-carousel" data-animate>
+          <div class="testimonial-viewport">
+            <div class="testimonial-track" data-testimonial-track>
+              <div class="testimonial-slide">
+                <article class="testimonial" data-animate>
+                  <div class="person"><span></span><div><h3>Belén Gonzalez</h3><p>★★★★★</p></div><b>“</b></div>
+                  <p>El programa me ayudó a ordenar mi entrenamiento y llegar a cada salida con mucha más seguridad.</p>
+                </article>
+                <article class="testimonial" data-animate>
+                  <div class="person"><span></span><div><h3>Martina Ruiz</h3><p>★★★★★</p></div><b>“</b></div>
+                  <p>Aprendí a dosificar energía, leer mejor el terreno y sostener la calma cuando el ascenso se pone difícil.</p>
+                </article>
+                <article class="testimonial" data-animate>
+                  <div class="person"><span></span><div><h3>Joel Ramirez</h3><p>★★★★★</p></div><b>“</b></div>
+                  <p>La preparación fue intensa, pero cada clase tuvo sentido cuando empecé a notar cambios reales en mi rendimiento.</p>
+                </article>
+              </div>
+              <div class="testimonial-slide">
+                <article class="testimonial" data-animate>
+                  <div class="person"><span></span><div><h3>Caterina Loyato</h3><p>★★★★★</p></div><b>“</b></div>
+                  <p>Ascenso me dio una estructura clara para entrenar fuerza, técnica y cabeza antes de volver a la montaña.</p>
+                </article>
+                <article class="testimonial" data-animate>
+                  <div class="person"><span></span><div><h3>Lucas Muñoz</h3><p>★★★★★</p></div><b>“</b></div>
+                  <p>La entrevista inicial y el seguimiento semanal hicieron que el proceso se sintiera exigente, pero siempre posible.</p>
+                </article>
+                <article class="testimonial" data-animate>
+                  <div class="person"><span></span><div><h3>Jazmín Vizcarra</h3><p>★★★★★</p></div><b>“</b></div>
+                  <p>Aprendí a moverme con carga, tomar mejores decisiones y sostener el ritmo cuando el ascenso se complicaba.</p>
+                </article>
+              </div>
+              <div class="testimonial-slide">
+                <article class="testimonial" data-animate>
+                  <div class="person"><span></span><div><h3>Luciano Ganino</h3><p>★★★★★</p></div><b>“</b></div>
+                  <p>Lo que más valoro es que cada práctica conectaba con una situación real: frío, fatiga, equipo y seguridad.</p>
+                </article>
+                <article class="testimonial" data-animate>
+                  <div class="person"><span></span><div><h3>Dana Cabral</h3><p>★★★★★</p></div><b>“</b></div>
+                  <p>Entré con dudas sobre mi resistencia y terminé el programa con una rutina sólida y mucha más confianza.</p>
+                </article>
+                <article class="testimonial" data-animate>
+                  <div class="person"><span></span><div><h3>Florencia Fratalocchi</h3><p>★★★★★</p></div><b>“</b></div>
+                  <p>El acompañamiento del equipo me ayudó a prepararme con disciplina sin perder de vista el disfrute de la montaña.</p>
+                </article>
+              </div>
+            </div>
+          </div>
+          <div class="dots centered" aria-label="Testimonios">
+            <button class="on" type="button" aria-label="Ver testimonios 1" data-testimonial-dot></button>
+            <button type="button" aria-label="Ver testimonios 2" data-testimonial-dot></button>
+            <button type="button" aria-label="Ver testimonios 3" data-testimonial-dot></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-info section-pad" id="contacto">
+        <div class="contact-head" data-animate>
+          <h2>Contacto</h2>
+          <p>Dejanos tus datos y el equipo de Cúspides te orienta para elegir programa, resolver dudas de inscripción o coordinar una entrevista inicial.</p>
+        </div>
+
+        <div class="contact-grid">
+          <form class="contact-form" data-animate data-contact-form>
+            <h3>Enviar mensaje</h3>
+            <div class="field-grid">
+              <label>
+                <span>Nombre</span>
+                <input type="text" name="name" autocomplete="name" />
+              </label>
+              <label>
+                <span>Email</span>
+                <input type="email" name="email" autocomplete="email" />
+              </label>
+              <label>
+                <span>Programa de interés</span>
+                <select name="program">
+                  <option>Programa Ascenso</option>
+                  <option>Programa Base</option>
+                  <option>Programa Cúspide</option>
+                </select>
+              </label>
+              <label>
+                <span>Teléfono</span>
+                <input type="tel" name="phone" autocomplete="tel" />
+              </label>
+            </div>
+            <label class="message-field">
+              <span>Mensaje</span>
+              <textarea name="message" rows="4"></textarea>
+            </label>
+            <button class="outline-btn" type="submit">Enviar</button>
+          </form>
+
+          <div class="contact-panel" data-animate>
+            <article data-animate>
+              <small>Llamanos</small>
+              <strong>+11 3000 1234</strong>
+              <p>Lunes a viernes de 9 a 18 hs.</p>
+            </article>
+            <article data-animate>
+              <small>Escribinos</small>
+              <strong>cuspide@gmail.com</strong>
+              <p>Consultas sobre cursos, disponibilidad e inscripciones.</p>
+            </article>
+            <article data-animate>
+              <small>Visitanos</small>
+              <strong>FADU UBA</strong>
+              <p>Ciudad Universitaria, Pabellón 3, Buenos Aires.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="map-section" id="ubicacion" data-animate>
+          <div>
+            <h3>Ubicación</h3>
+          </div>
+          <a href="https://www.google.com/maps/search/?api=1&query=FADU%20UBA%20Ciudad%20Universitaria%20Buenos%20Aires" target="_blank" rel="noreferrer">Abrir en Maps</a>
+          <iframe title="Mapa de FADU UBA" src="https://www.google.com/maps?q=FADU%20UBA%20Ciudad%20Universitaria%20Buenos%20Aires&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <div class="faq-section" id="preguntas" data-animate>
+          <div class="faq-title">
+            <h2>Preguntas frecuentes</h2>
+          </div>
+          <div class="faq-list">
+            <details open>
+              <summary>¿Qué programa me conviene elegir?</summary>
+              <p>Ascenso es ideal si ya tenés una base y querés mejorar resistencia, técnica y seguridad en terrenos más exigentes.</p>
+            </details>
+            <details>
+              <summary>Necesito experiencia previa?</summary>
+              <p>Recomendamos haber realizado una preparación inicial o una entrevista para evaluar tu condición física actual.</p>
+            </details>
+            <details>
+              <summary>¿Dónde se realizan las clases?</summary>
+              <p>La coordinación y encuentros principales son en FADU UBA, con salidas y prácticas según el programa elegido.</p>
+            </details>
+            <details>
+              <summary>¿Cómo inicio la inscripción?</summary>
+              <p>Completás el formulario, nos contás tu objetivo y te respondemos dentro de las 24 hs hábiles con el siguiente paso.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <h2>Cúspides</h2>
+          <p>Preparación física, técnica y mental para afrontar desafíos reales en la montaña.</p>
+          <p>FADU UBA<br />Bellucia 2, 2026<br />Teléfono: +11 3000 1234<br />Email: cuspide@gmail.com</p>
+          <div class="socials">
+            <a href="#" aria-label="YouTube de Cúspides">
+              <img src="assets/images/redes1.png" alt="" />
+            </a>
+            <a href="#" aria-label="Instagram de Cúspides">
+              <img src="assets/images/redes2.png" alt="" />
+            </a>
+            <a href="#" aria-label="Facebook de Cúspides">
+              <img src="assets/images/redes3.png" alt="" />
+            </a>
+          </div>
+        </div>
+        <nav class="footer-links" aria-label="Enlaces del footer">
+          <div>
+            <h3>Explorar</h3>
+            <a href="index.html#home">Home</a>
+            <a href="index.html#nosotros">Sobre nosotros</a>
+            <a href="index.html#equipo">Nuestro equipo</a>
+            <a href="#testimonios">Testimonios</a>
+            <a href="biblioteca.html">Biblioteca UX</a>
+          </div>
+          <div>
+            <h3>Programas</h3>
+            <a href="index.html#cursos">Programa Base</a>
+            <a href="#programa">Programa Ascenso</a>
+            <a href="index.html#cursos">Programa Cúspide</a>
+            <a href="#preguntas">Preguntas frecuentes</a>
+          </div>
+          <div>
+            <h3>Contacto</h3>
+            <a href="tel:+1130001234">+11 3000 1234</a>
+            <a href="mailto:cuspide@gmail.com">cuspide@gmail.com</a>
+            <a href="#contacto">Enviar mensaje</a>
+            <a href="#ubicacion">Ver ubicación</a>
+          </div>
+          <div>
+            <h3>Ubicación</h3>
+            <a href="#ubicacion">FADU UBA</a>
+            <a href="#ubicacion">Ciudad Universitaria</a>
+            <a href="#ubicacion">Pabellón 3</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=FADU%20UBA%20Ciudad%20Universitaria%20Buenos%20Aires" target="_blank" rel="noreferrer">Abrir en Maps</a>
+          </div>
+        </nav>
+      </div>
+      <p class="copyright">Copyright Cúspides todos los derechos reservados<br />Diseñado por Bianca Ruiz Ibarra</p>
+    </footer>
+
+    <a class="back-top" href="#home" aria-label="Volver al inicio">
+      <svg class="back-top-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 5 5.6 11.4l1.4 1.4 4-4V20h2V8.8l4 4 1.4-1.4L12 5Z"></path>
+      </svg>
+    </a>
+
+    <script src="script.js"></script>
+  </body>
+</html>
