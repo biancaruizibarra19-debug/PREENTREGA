@@ -6,6 +6,7 @@ const detailPageLinks = [...document.querySelectorAll("[data-detail-page-link]")
 const navLinks = [...document.querySelectorAll(".main-nav a[href^='#']:not(.search-link)")];
 const hero = document.querySelector(".hero");
 const heroTitle = document.querySelector("[data-hero-title]");
+const heroBg = document.querySelector("[data-hero-bg]");
 const heroForeground = document.querySelector("[data-hero-foreground]");
 const ctaImage = document.querySelector("[data-cta-image]");
 const ctaSection = document.querySelector(".cta");
@@ -25,8 +26,10 @@ const testimonialTrack = document.querySelector("[data-testimonial-track]");
 const testimonialDots = [...document.querySelectorAll("[data-testimonial-dot]")];
 const weekCarousel = document.querySelector("[data-week-carousel]");
 const summitCarousel = document.querySelector("[data-summit-carousel]");
-const courseToggles = [...document.querySelectorAll("[data-course-toggle]")];
 const planStack = document.querySelector("[data-plan-stack]");
+const methodSteps = [...document.querySelectorAll("[data-method-step]")];
+const methodToggles = [...document.querySelectorAll("[data-method-toggle]")];
+const methodDots = [...document.querySelectorAll("[data-method-dot]")];
 const contactForm = document.querySelector("[data-contact-form]");
 const root = document.documentElement;
 
@@ -36,6 +39,7 @@ let cursorY = window.innerHeight / 2;
 let followerFrame = null;
 let followerX = cursorX;
 let followerY = cursorY;
+let heroDepthFrame = null;
 let coachPressedCard = null;
 let coachPressX = 0;
 let coachPressY = 0;
@@ -45,6 +49,32 @@ detailPageLinks.forEach((link) => {
     event.preventDefault();
     window.location.assign(link.href);
   }, { capture: true });
+});
+
+const setActiveMethodStep = (stepId, forceOpen = false) => {
+  methodSteps.forEach((step) => {
+    const isOpen = step.dataset.methodStep === stepId && (forceOpen || !step.classList.contains("is-open"));
+    step.classList.toggle("is-open", isOpen);
+  });
+
+  methodToggles.forEach((toggle) => {
+    toggle.setAttribute("aria-expanded", String(
+      toggle.dataset.methodToggle === stepId &&
+      methodSteps.some((step) => step.dataset.methodStep === stepId && step.classList.contains("is-open"))
+    ));
+  });
+
+  methodDots.forEach((dot) => {
+    dot.classList.toggle("is-open", dot.dataset.methodDot === stepId && methodSteps.some((step) => step.dataset.methodStep === stepId && step.classList.contains("is-open")));
+  });
+};
+
+methodToggles.forEach((toggle) => {
+  toggle.addEventListener("click", () => setActiveMethodStep(toggle.dataset.methodToggle));
+});
+
+methodDots.forEach((dot) => {
+  dot.addEventListener("click", () => setActiveMethodStep(dot.dataset.methodDot, true));
 });
 
 aboutGalleryImages.forEach((image) => {
@@ -87,6 +117,7 @@ aboutGalleryImages.forEach((image) => {
 
 if (aboutMobileGallery) {
   const images = [...aboutMobileGallery.querySelectorAll("img")];
+  const caption = document.querySelector("[data-about-mobile-caption]");
   let index = 0;
 
   if (images.length > 1) {
@@ -94,6 +125,9 @@ if (aboutMobileGallery) {
       images[index].classList.remove("is-active");
       index = (index + 1) % images.length;
       images[index].classList.add("is-active");
+      if (caption) {
+        caption.textContent = images[index].dataset.caption || "";
+      }
     }, 1800);
   }
 }
@@ -164,19 +198,44 @@ const setActiveNavLink = () => {
   navLinks.forEach((link) => {
     link.classList.toggle("active", link.getAttribute("href") === `#${activeId}`);
   });
+
+  navCourseToggles.forEach((toggle) => {
+    toggle.classList.toggle("active", activeId === "cursos");
+  });
+
 };
 
 const setHeroDepth = () => {
-  if (!hero || !heroTitle || !heroForeground) return;
+  heroDepthFrame = null;
+  if (!hero || !heroTitle || !heroBg || !heroForeground) return;
 
   const heroRect = hero.getBoundingClientRect();
   const progress = Math.min(Math.max(-heroRect.top / (hero.offsetHeight * 0.62), 0), 1);
-  const titleShift = progress * 330;
-  const foregroundShift = progress * 4;
-  const foregroundScale = 1.015 + progress * 0.003;
+  const depthFactor = window.matchMedia("(max-width: 620px)").matches ? 0.48 : 1;
+  const titleShift = progress * 330 * depthFactor;
+  const bgShift = progress * -26 * depthFactor;
+  const bgScale = 1.026 + progress * 0.014 * depthFactor;
+  const foregroundShift = progress * 46 * depthFactor;
+  const foregroundScale = 1.018 + progress * 0.006 * depthFactor;
 
   heroTitle.style.setProperty("--hero-title-shift", `${titleShift}px`);
+  heroBg.style.transform = `translate3d(0, ${bgShift}px, 0) scale(${bgScale})`;
   heroForeground.style.transform = `translate3d(0, ${foregroundShift}px, 0) scale(${foregroundScale})`;
+};
+
+const requestHeroDepth = () => {
+  if (heroDepthFrame) return;
+
+  heroDepthFrame = requestAnimationFrame(setHeroDepth);
+};
+
+const refreshHeroDepth = () => {
+  if (heroDepthFrame) {
+    cancelAnimationFrame(heroDepthFrame);
+    heroDepthFrame = null;
+  }
+
+  setHeroDepth();
 };
 
 const setCtaDepth = () => {
@@ -263,7 +322,7 @@ const moveCursorFollower = () => {
 };
 
 const setCursorTarget = (event) => {
-  const target = event.target.closest("a, button, .coach-card, .course-marker, .testimonial, .benefit, .week-track article");
+  const target = event.target.closest("a, button, .coach-card, .method-step, .testimonial, .benefit, .week-track article");
   cursorFollower?.classList.toggle("is-active", Boolean(target));
 };
 
@@ -428,8 +487,11 @@ const createDepthCarousel = (carousel) => {
 
   const track = carousel.querySelector(".week-track");
   const cards = [...carousel.querySelectorAll(".week-track article")];
+  const progressButtons = [...carousel.querySelectorAll("[data-week-progress]")];
+  const prevButton = carousel.querySelector("[data-week-prev]");
+  const nextButton = carousel.querySelector("[data-week-next]");
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-  let active = 0;
+  let active = cards.length > 2 ? 2 : 0;
   let timer = null;
   let startX = 0;
   let dragX = 0;
@@ -448,8 +510,10 @@ const createDepthCarousel = (carousel) => {
     cards.forEach((card, index) => {
       const offset = signedOffset(index);
       const visibleOffset = Math.max(-3, Math.min(3, offset));
+      const edgePull = Math.abs(offset) === 2 ? `${offset > 0 ? -46 : 46}px` : "0px";
 
       card.style.setProperty("--slot", visibleOffset);
+      card.style.setProperty("--edge-pull", edgePull);
       card.classList.toggle("is-active", offset === 0);
       card.classList.toggle("is-near", Math.abs(offset) === 1);
       card.classList.toggle("is-far", Math.abs(offset) === 2);
@@ -457,6 +521,12 @@ const createDepthCarousel = (carousel) => {
       card.setAttribute("aria-hidden", String(Math.abs(offset) > 2));
       card.setAttribute("aria-current", offset === 0 ? "true" : "false");
       card.tabIndex = Math.abs(offset) <= 2 ? 0 : -1;
+    });
+
+    progressButtons.forEach((button, index) => {
+      button.classList.toggle("is-active", index === active);
+      button.classList.toggle("is-done", index < active);
+      button.setAttribute("aria-current", index === active ? "step" : "false");
     });
   };
 
@@ -488,6 +558,13 @@ const createDepthCarousel = (carousel) => {
       }
     });
   });
+
+  progressButtons.forEach((button, index) => {
+    button.addEventListener("click", () => goTo(index));
+  });
+
+  prevButton?.addEventListener("click", () => goTo(active - 1));
+  nextButton?.addEventListener("click", () => goTo(active + 1));
 
   track.addEventListener("pointerdown", (event) => {
     isDragging = true;
@@ -528,7 +605,7 @@ const createDepthCarousel = (carousel) => {
   carousel.addEventListener("focusin", stop);
   carousel.addEventListener("focusout", start);
 
-  setActive(0);
+  setActive(active);
   start();
 
   return {
@@ -596,6 +673,8 @@ const createSummitCarousel = (carousel) => {
   const imageWindow = carousel.querySelector(".summit-image-window");
   const currentImage = carousel.querySelector("[data-summit-image]");
   const dots = [...carousel.querySelectorAll("[data-summit-dot]")];
+  const previousButton = carousel.querySelector("[data-summit-prev]");
+  const nextButton = carousel.querySelector("[data-summit-next]");
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   let active = 0;
   let timer = null;
@@ -634,6 +713,8 @@ const createSummitCarousel = (carousel) => {
 
     isSwitching = true;
     clearTimeout(transitionTimer);
+    copyWindow.querySelectorAll(".summit-text-slide:not(.is-active)").forEach((node) => node.remove());
+    imageWindow.querySelectorAll("img:not(.is-active)").forEach((node) => node.remove());
     copyWindow.querySelectorAll(".summit-text-slide.is-leaving").forEach((node) => node.remove());
     imageWindow.querySelectorAll("img.is-leaving").forEach((node) => node.remove());
 
@@ -681,6 +762,11 @@ const createSummitCarousel = (carousel) => {
     });
   };
 
+  const goTo = (index) => {
+    setActive(index);
+    start();
+  };
+
   const stop = () => {
     clearInterval(timer);
     timer = null;
@@ -694,10 +780,12 @@ const createSummitCarousel = (carousel) => {
 
   dots.forEach((dot, index) => {
     dot.addEventListener("click", () => {
-      setActive(index);
-      start();
+      goTo(index);
     });
   });
+
+  previousButton?.addEventListener("click", () => goTo(active - 1));
+  nextButton?.addEventListener("click", () => goTo(active + 1));
 
   imageWindow.querySelectorAll("img").forEach((image) => {
     image.draggable = false;
@@ -855,14 +943,14 @@ document.addEventListener(
 
 setHeaderState();
 setActiveNavLink();
-setHeroDepth();
+refreshHeroDepth();
 setCtaDepth();
 setupCtaVideo();
 window.addEventListener("scroll", setHeaderState, { passive: true });
 window.addEventListener("scroll", setActiveNavLink, { passive: true });
-window.addEventListener("scroll", setHeroDepth, { passive: true });
+window.addEventListener("scroll", requestHeroDepth, { passive: true });
 window.addEventListener("scroll", setCtaDepth, { passive: true });
-window.addEventListener("resize", setHeroDepth);
+window.addEventListener("resize", refreshHeroDepth);
 window.addEventListener("resize", setCtaDepth);
 window.addEventListener("resize", setActiveNavLink);
 window.addEventListener("resize", () => {
@@ -923,20 +1011,6 @@ nav.addEventListener("click", (event) => {
       window.location.href = link.href;
     }
   }
-});
-
-courseToggles.forEach((toggle) => {
-  toggle.addEventListener("click", () => {
-    const point = toggle.closest(".course-point");
-    const pointRect = point?.getBoundingClientRect();
-    const isOpen = point.classList.toggle("is-open");
-
-    if (pointRect) {
-      point.style.setProperty("--course-point-x", `${pointRect.left}px`);
-    }
-
-    toggle.setAttribute("aria-expanded", String(isOpen));
-  });
 });
 
 if (planStack) {

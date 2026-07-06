@@ -24,13 +24,14 @@
         <span></span>
       </button>
       <nav class="main-nav" data-nav>
-        <a href="index.html#home">Home</a>
-        <a href="index.html#beneficios">Beneficios</a>
-        <a href="index.html#nosotros">Nosotros</a>
-        <a href="index.html#equipo">Equipo</a>
+        <a href="index.html#home">HOME</a>
+        <a href="index.html#beneficios">BENEFICIOS</a>
+        <a href="index.html#nosotros">NOSOTROS</a>
+        <a href="index.html#expediciones">EXPEDICIONES</a>
+        <a href="index.html#equipo">EQUIPO</a>
         <div class="nav-course-menu">
           <button class="nav-course-trigger" type="button" aria-expanded="false" data-nav-course-toggle>
-            <span>Cursos</span>
+            <span>CURSOS</span>
             <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4"></path></svg>
           </button>
           <div class="nav-course-dropdown" aria-label="Cursos disponibles">
@@ -39,11 +40,10 @@
             <a href="index.html#cursos">Programa Cúspide</a>
           </div>
         </div>
-        <a href="index.html#testimonios">Testimonios</a>
-        <a href="index.html#contacto">Contacto</a>
-        <a href="index.html#ubicacion">Ubicación</a>
-        <a href="index.html#preguntas">Preguntas</a>
-        <a class="active" href="biblioteca.html">Biblioteca</a>
+        <a href="index.html#testimonios">TESTIMONIOS</a>
+        <a href="index.html#contacto">CONTACTO</a>
+        <a href="index.html#preguntas">PREGUNTAS</a>
+        <a class="active" href="biblioteca.html">BIBLIOTECA</a>
       </nav>
     </header>
 
@@ -64,8 +64,24 @@
           <article class="library-swatch navy"><span>#052833</span></article>
           <article class="library-swatch steel"><span>#607187</span></article>
           <article class="library-swatch orange"><span>#F5A11A</span></article>
-          <article class="library-font-card title-font"><span>Título</span><strong>CÚSPIDES</strong></article>
-          <article class="library-font-card body-font"><span>Texto</span><strong>Google Sans Flex</strong></article>
+          <article class="library-font-card title-font">
+            <span>Título</span>
+            <strong>CÚSPIDES</strong>
+            <div class="type-samples">
+              <p class="sample-title hero-detail"><span>Hero detalle - 65px</span>Programa Ascenso</p>
+              <p class="sample-title section-title"><span>Títulos de sección - clamp(23px, 2.4vw, 32px)</span>Componentes</p>
+              <p class="sample-title card-title"><span>Títulos de card - clamp(23px, 1.95vw, 30px)</span>Semana 3</p>
+            </div>
+          </article>
+          <article class="library-font-card body-font">
+            <span>Texto</span>
+            <strong>Google Sans Flex</strong>
+            <div class="type-samples">
+              <p class="sample-body section-copy"><span>Texto de sección - 20px / 300</span>Preparación física, técnica y mental para afrontar desafíos reales.</p>
+              <p class="sample-body button-copy"><span>Botones - 16px / 300</span>Ver cursos</p>
+              <p class="sample-body card-copy"><span>Texto de card - 16px / 300</span>Evaluación inicial y preparación progresiva.</p>
+            </div>
+          </article>
         </div>
       </section>
 
@@ -94,6 +110,19 @@
             </div>
           </article>
 
+          <article class="component-tile controls-tile" data-animate>
+            <span>Controles</span>
+            <div class="library-arrow-row">
+              <button type="button" aria-label="Anterior">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5 5.6 11.4l1.4 1.4 4-4V20h2V8.8l4 4 1.4-1.4L12 5Z"></path></svg>
+              </button>
+              <button type="button" aria-label="Siguiente">
+                <svg class="is-next" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5 5.6 11.4l1.4 1.4 4-4V20h2V8.8l4 4 1.4-1.4L12 5Z"></path></svg>
+              </button>
+            </div>
+            <p>Flechas circulares con borde claro y hover naranja, usadas para carruseles y navegación secundaria.</p>
+          </article>
+
           <article class="component-tile course-tile" data-animate>
             <span>Curso</span>
             <img src="assets/images/card4.jpg" alt="Cordada en ascenso" />
@@ -102,6 +131,15 @@
               <span>$310.000</span>
               <b>$260.000</b>
             </div>
+          </article>
+
+          <article class="component-tile media-state-tile" data-animate>
+            <span>Estados de imagen</span>
+            <div class="media-state-pair">
+              <figure><img src="assets/images/semana1.png" alt="" /><figcaption>Inactiva</figcaption></figure>
+              <figure class="is-active"><img src="assets/images/semana3.png" alt="" /><figcaption>Activa</figcaption></figure>
+            </div>
+            <p>Las imágenes inactivas pueden ir en blanco y negro; la selección recupera color para reforzar foco.</p>
           </article>
 
           <article class="component-tile benefit-tile" data-animate>
@@ -144,6 +182,12 @@
               <summary>¿Necesito experiencia?</summary>
               <p>Depende del programa elegido.</p>
             </details>
+          </article>
+
+          <article class="component-tile background-tile" data-animate>
+            <span>Fondos</span>
+            <div class="background-sample" aria-hidden="true"></div>
+            <p>Base con patrón de puntos y capas de imagen con opacidad baja, recortadas por el límite de sección cuando funcionan como cierre visual.</p>
           </article>
 
           <article class="component-tile kit-tile" data-animate>

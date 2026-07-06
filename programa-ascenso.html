@@ -24,13 +24,14 @@
         <span></span>
       </button>
       <nav class="main-nav" data-nav>
-        <a href="index.html#home">Home</a>
-        <a href="index.html#beneficios">Beneficios</a>
-        <a href="index.html#nosotros">Nosotros</a>
-        <a href="index.html#equipo">Equipo</a>
+        <a href="index.html#home">HOME</a>
+        <a href="index.html#beneficios">BENEFICIOS</a>
+        <a href="index.html#nosotros">NOSOTROS</a>
+        <a href="index.html#expediciones">EXPEDICIONES</a>
+        <a href="index.html#equipo">EQUIPO</a>
         <div class="nav-course-menu">
           <button class="nav-course-trigger active" type="button" aria-expanded="false" data-nav-course-toggle>
-            <span>Cursos</span>
+            <span>CURSOS</span>
             <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4"></path></svg>
           </button>
           <div class="nav-course-dropdown" aria-label="Cursos disponibles">
@@ -39,11 +40,10 @@
             <a href="index.html#cursos">Programa Cúspide</a>
           </div>
         </div>
-        <a href="#testimonios">Testimonios</a>
-        <a href="#contacto">Contacto</a>
-        <a href="#ubicacion">Ubicación</a>
-        <a href="#preguntas">Preguntas</a>
-        <a href="biblioteca.html">Biblioteca</a>
+        <a href="#testimonios">TESTIMONIOS</a>
+        <a href="#contacto">CONTACTO</a>
+        <a href="#preguntas">PREGUNTAS</a>
+        <a href="biblioteca.html">BIBLIOTECA</a>
       </nav>
     </header>
 
@@ -87,9 +87,9 @@
 
       <section class="program-summary section-pad" id="programa">
         <div class="program-copy" data-animate>
-          <h2>Programa Ascenso</h2>
+          <p class="eyebrow">Programa Ascenso</p>
+          <h2>Preparación real para alturas reales</h2>
           <p>El programa ascenso está diseñado para llevar tu entrenamiento al siguiente nivel. A través de un plan estructurado de 8 semanas, vas a desarrollar mayor resistencia, fuerza y habilidades técnicas específicas para moverte con confianza en terrenos desafiantes.</p>
-          <p>Integramos entrenamiento físico, técnica en montaña y preparación mental, con el acompañamiento de un equipo de profesionales y una comunidad que te impulsa a seguir creciendo.</p>
           <div class="included-list">
             <h3>Qué incluye el programa</h3>
             <ul>
@@ -123,39 +123,55 @@
       <section class="week-plan section-pad" id="plan">
         <div class="section-heading" data-animate>
           <h2>Plan de 8 semanas</h2>
+          <p>Ocho semanas para construir resistencia, técnica y seguridad.</p>
         </div>
         <div class="week-carousel" data-animate data-week-carousel>
+          <div class="week-progress" aria-label="Seleccionar semana">
+            <button type="button" data-week-progress="0" aria-label="Ver semana 1">1</button>
+            <button type="button" data-week-progress="1" aria-label="Ver semana 2">2</button>
+            <button type="button" data-week-progress="2" aria-label="Ver semana 3">3</button>
+            <button type="button" data-week-progress="3" aria-label="Ver semana 4">4</button>
+            <button type="button" data-week-progress="4" aria-label="Ver semana 5">5</button>
+            <button type="button" data-week-progress="5" aria-label="Ver semana 6">6</button>
+            <button type="button" data-week-progress="6" aria-label="Ver semana 7">7</button>
+            <button type="button" data-week-progress="7" aria-label="Ver semana 8">8</button>
+          </div>
+          <button class="week-arrow week-arrow-prev" type="button" data-week-prev aria-label="Semana anterior">
+            <svg class="week-arrow-icon is-left" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 5 5.6 11.4l1.4 1.4 4-4V20h2V8.8l4 4 1.4-1.4L12 5Z"></path>
+            </svg>
+          </button>
           <div class="week-track">
             <article>
-              <img src="assets/images/card4.jpg" alt="Cordada en ascenso" />
+              <img src="assets/images/semana1.png" alt="Cordada en ascenso" />
               <span>1</span>
               <h3>Semana 1</h3>
               <strong>Adaptación</strong>
               <p>Evaluación inicial y preparación progresiva.</p>
             </article>
             <article>
-              <img src="assets/images/card5.jpg" alt="Ascenso técnico en nieve" />
+              <img src="assets/images/semana2.png" alt="Ascenso técnico en nieve" />
               <span>2</span>
               <h3>Semana 2</h3>
               <strong>Resistencia</strong>
               <p>Desarrollo de capacidad<br />aeróbica y recuperación.</p>
             </article>
             <article>
-              <img src="assets/images/nosotros1.jpg" alt="Montañistas avanzando en nieve" />
+              <img src="assets/images/semana3.png" alt="Montañistas avanzando en nieve" />
               <span>3</span>
               <h3>Semana 3</h3>
               <strong>Estabilidad</strong>
               <p>Potencia, equilibrio<br />y control corporal.</p>
             </article>
             <article>
-              <img src="assets/images/card2.jpg" alt="Entrenamiento sobre nieve" />
+              <img src="assets/images/semana4.png" alt="Entrenamiento sobre nieve" />
               <span>4</span>
               <h3>Semana 4</h3>
               <strong>Técnica</strong>
               <p>Fundamentos de seguridad<br />y desplazamiento.</p>
             </article>
             <article>
-              <img src="assets/images/card3.jpg" alt="Alpinista avanzando en montaña" />
+              <img src="assets/images/semana5.png" alt="Alpinista avanzando en montaña" />
               <span>5</span>
               <h3>Semana 5</h3>
               <strong>Rendimiento</strong>
@@ -183,6 +199,11 @@
               <p>Medición final y preparación para el desafío.</p>
             </article>
           </div>
+          <button class="week-arrow week-arrow-next" type="button" data-week-next aria-label="Semana siguiente">
+            <svg class="week-arrow-icon is-right" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 5 5.6 11.4l1.4 1.4 4-4V20h2V8.8l4 4 1.4-1.4L12 5Z"></path>
+            </svg>
+          </button>
         </div>
       </section>
 
@@ -301,9 +322,9 @@
 
       <section class="requirements section-pad">
         <div class="requirements-copy" data-animate>
-          <h2>Requisitos</h2>
-          <p>¿Es este programa para vos? no todos los perfiles ingresan al Programa ASCENSO. Antes de comenzar, realizamos una entrevista individual para conocer tu experiencia, evaluar tu compromiso y determinar si estás listo para afrontar una preparación técnica de alta exigencia.</p>
-          <p>La montaña no admite improvisaciones, nuestro proceso tampoco.</p>
+          <p class="eyebrow">Requisitos</p>
+          <h2>¿Este programa es para vos?</h2>
+          <p>No todos los perfiles ingresan al Programa ASCENSO. Antes de comenzar, realizamos una entrevista individual para conocer tu experiencia, evaluar tu compromiso y determinar si estás listo para afrontar una preparación técnica de alta exigencia.</p>
           <div class="included-list requirements-list">
             <h3>Requisitos técnicos</h3>
             <ul>
@@ -318,7 +339,7 @@
         <div class="other-plans" data-animate>
           <h2>Otros planes</h2>
           <div class="plan-card-grid" data-plan-stack>
-            <article class="mini-plan is-active" tabindex="0" data-plan-card>
+            <article class="mini-plan is-active" tabindex="0" data-plan-card data-stack-label="PROGRAMA BASE">
               <span>Programa Base</span>
               <small>Fase 01</small>
               <div class="price-lockup">
@@ -334,7 +355,7 @@
               <p>Desarrollá disciplina, resiliencia y concentración para enfrentar la montaña.</p>
               <a class="outline-btn small" href="index.html#cursos">Ver programa</a>
             </article>
-            <article class="mini-plan is-behind" tabindex="0" data-plan-card>
+            <article class="mini-plan is-behind" tabindex="0" data-plan-card data-stack-label="PROGRAMA CÚSPIDE">
               <span>Programa Cúspide</span>
               <small>Fase 03</small>
               <div class="price-lockup">
@@ -357,6 +378,7 @@
       <section class="detail-team section-pad" id="equipo">
         <div class="section-heading" data-animate>
           <h2>Equipo Ascenso</h2>
+          <p>Guías y entrenadores para acompañar tu preparación técnica en montaña.</p>
         </div>
         <div class="coach-list detail-team-list" data-animate>
           <div class="coach-viewport">
@@ -521,7 +543,7 @@
       <section class="contact-info section-pad" id="contacto">
         <div class="contact-head" data-animate>
           <h2>Contacto</h2>
-          <p>Dejanos tus datos y el equipo de Cúspides te orienta para elegir programa, resolver dudas de inscripción o coordinar una entrevista inicial.</p>
+          <p>Escribinos y te orientamos para elegir tu programa.</p>
         </div>
 
         <div class="contact-grid">
@@ -539,8 +561,8 @@
               <label>
                 <span>Programa de interés</span>
                 <select name="program">
-                  <option>Programa Ascenso</option>
                   <option>Programa Base</option>
+                  <option>Programa Ascenso</option>
                   <option>Programa Cúspide</option>
                 </select>
               </label>
@@ -575,37 +597,40 @@
           </div>
         </div>
 
-        <div class="map-section" id="ubicacion" data-animate>
-          <div>
-            <h3>Ubicación</h3>
+        <section class="location-faq-section" id="ubicacion" aria-labelledby="location-faq-title" data-animate>
+          <span class="anchor-offset" id="preguntas" aria-hidden="true"></span>
+          <div class="map-section">
+            <div>
+              <h3 id="location-faq-title">Ubicación</h3>
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&query=FADU%20UBA%20Ciudad%20Universitaria%20Buenos%20Aires" target="_blank" rel="noreferrer">Abrir en Maps</a>
+            <iframe title="Mapa de FADU UBA" src="https://www.google.com/maps?q=FADU%20UBA%20Ciudad%20Universitaria%20Buenos%20Aires&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
-          <a href="https://www.google.com/maps/search/?api=1&query=FADU%20UBA%20Ciudad%20Universitaria%20Buenos%20Aires" target="_blank" rel="noreferrer">Abrir en Maps</a>
-          <iframe title="Mapa de FADU UBA" src="https://www.google.com/maps?q=FADU%20UBA%20Ciudad%20Universitaria%20Buenos%20Aires&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
 
-        <div class="faq-section" id="preguntas" data-animate>
-          <div class="faq-title">
-            <h2>Preguntas frecuentes</h2>
+          <div class="faq-section">
+            <div class="faq-title">
+              <h2>Preguntas frecuentes</h2>
+            </div>
+            <div class="faq-list">
+              <details open>
+                <summary>¿Qué nivel necesito para entrar a Programa Ascenso?</summary>
+                <p>Necesitás una base física activa y experiencia previa en trekking o montaña. Antes de empezar hacemos una entrevista para evaluar tu perfil.</p>
+              </details>
+              <details>
+                <summary>¿Qué se trabaja durante las 8 semanas?</summary>
+                <p>Entrenamos resistencia, fuerza, técnica de desplazamiento, seguridad y preparación mental para moverte con más criterio en altura.</p>
+              </details>
+              <details>
+                <summary>¿El programa incluye salidas prácticas?</summary>
+                <p>Sí. El plan combina encuentros de entrenamiento con prácticas aplicadas según el avance del grupo y las condiciones de seguridad.</p>
+              </details>
+              <details>
+                <summary>¿Cómo inicio la inscripción a Ascenso?</summary>
+                <p>Completás el formulario, nos contás tu experiencia y coordinamos el primer contacto para confirmar si el programa es adecuado para vos.</p>
+              </details>
+            </div>
           </div>
-          <div class="faq-list">
-            <details open>
-              <summary>¿Qué programa me conviene elegir?</summary>
-              <p>Ascenso es ideal si ya tenés una base y querés mejorar resistencia, técnica y seguridad en terrenos más exigentes.</p>
-            </details>
-            <details>
-              <summary>Necesito experiencia previa?</summary>
-              <p>Recomendamos haber realizado una preparación inicial o una entrevista para evaluar tu condición física actual.</p>
-            </details>
-            <details>
-              <summary>¿Dónde se realizan las clases?</summary>
-              <p>La coordinación y encuentros principales son en FADU UBA, con salidas y prácticas según el programa elegido.</p>
-            </details>
-            <details>
-              <summary>¿Cómo inicio la inscripción?</summary>
-              <p>Completás el formulario, nos contás tu objetivo y te respondemos dentro de las 24 hs hábiles con el siguiente paso.</p>
-            </details>
-          </div>
-        </div>
+        </section>
       </section>
     </main>
 

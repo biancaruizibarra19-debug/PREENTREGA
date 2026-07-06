@@ -24,13 +24,14 @@
         <span></span>
       </button>
       <nav class="main-nav" data-nav>
-        <a class="active" href="#home">Home</a>
-        <a href="#beneficios">Beneficios</a>
-        <a href="#nosotros">Nosotros</a>
-        <a href="#equipo">Equipo</a>
+        <a class="active" href="#home">HOME</a>
+        <a href="#beneficios">BENEFICIOS</a>
+        <a href="#nosotros">NOSOTROS</a>
+        <a href="#expediciones">EXPEDICIONES</a>
+        <a href="#equipo">EQUIPO</a>
         <div class="nav-course-menu">
           <button class="nav-course-trigger" type="button" aria-expanded="false" data-nav-course-toggle>
-            <span>Cursos</span>
+            <span>CURSOS</span>
             <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4"></path></svg>
           </button>
           <div class="nav-course-dropdown" aria-label="Cursos disponibles">
@@ -39,45 +40,45 @@
             <a href="#cursos">Programa Cúspide</a>
           </div>
         </div>
-        <a href="#testimonios">Testimonios</a>
-        <a href="#contacto">Contacto</a>
-        <a href="#ubicacion">Ubicación</a>
-        <a href="#preguntas">Preguntas</a>
-        <a href="biblioteca.html">Biblioteca</a>
+        <a href="#testimonios">TESTIMONIOS</a>
+        <a href="#contacto">CONTACTO</a>
+        <a href="#preguntas">PREGUNTAS</a>
+        <a href="biblioteca.html">BIBLIOTECA</a>
       </nav>
     </header>
 
     <main id="home">
       <section class="hero">
-        <img class="hero-bg" src="assets/images/HERO4.jpg" alt="" aria-hidden="true" />
+        <img class="hero-bg" src="assets/images/HEROSINMONTAÑA.png" alt="" aria-hidden="true" data-hero-bg />
         <img class="hero-foreground" src="assets/images/HERO42.png" alt="" aria-hidden="true" data-hero-foreground />
         <div class="hero-content">
           <div class="hero-title-layer" data-hero-title>
-            <p>Explorá con</p>
+            <p>EXPLORÁ CON</p>
             <h1>CÚSPIDES</h1>
           </div>
+          <p class="hero-subtitle"><span>Preparación física, técnica y mental para enfrentar</span><span>la montaña con resistencia, criterio y control.</span></p>
           <a class="outline-btn dark" href="#cursos">Ver cursos</a>
         </div>
       </section>
 
       <section class="benefits section-pad" id="beneficios">
-        <div class="section-heading compact" data-animate>
+        <div class="section-heading compact">
           <h2>Beneficios del alpinismo</h2>
         </div>
         <div class="benefit-grid">
-          <article class="benefit" data-animate>
+          <article class="benefit">
             <img src="assets/images/icono1.png" alt="" aria-hidden="true" />
             <h3>Resistencia<br />física</h3>
           </article>
-          <article class="benefit" data-animate>
+          <article class="benefit">
             <img src="assets/images/icono2.png" alt="" aria-hidden="true" />
             <h3>Disciplina y<br />perseverancia</h3>
           </article>
-          <article class="benefit" data-animate>
+          <article class="benefit">
             <img src="assets/images/icono4.png" alt="" aria-hidden="true" />
             <h3>Conecta con<br />la naturaleza</h3>
           </article>
-          <article class="benefit" data-animate>
+          <article class="benefit">
             <img src="assets/images/icono5.png" alt="" aria-hidden="true" />
             <h3>Superación<br />personal</h3>
           </article>
@@ -86,13 +87,14 @@
 
       <section class="about section-pad" id="nosotros">
         <div class="about-mobile-gallery" data-about-mobile-gallery>
-          <img class="is-active" src="assets/images/nosotros1.jpg" alt="Cordada avanzando sobre nieve" />
-          <img src="assets/images/nosotros2.jpg" alt="Cordada avanzando sobre nieve" />
-          <img src="assets/images/nosotros3.jpg" alt="Cordada avanzando sobre nieve" />
-          <img src="assets/images/nosotros4.jpg" alt="Alpinistas subiendo una pared rocosa nevada" />
-          <img src="assets/images/nosotros5.jpg" alt="Alpinistas subiendo una pared rocosa nevada" />
-          <img src="assets/images/nosotros6.jpg" alt="Alpinistas subiendo una pared rocosa nevada" />
+          <img class="is-active" src="assets/images/nosotros1.jpg" alt="Cordada avanzando sobre nieve" data-caption="Monte Everest · Nepal / Tíbet · 8.849 m" />
+          <img src="assets/images/nosotros2.jpg" alt="Cordada avanzando sobre nieve" data-caption="Mont Blanc · Francia / Italia · 4.808–4.810 m" />
+          <img src="assets/images/nosotros3.jpg" alt="Cordada avanzando sobre nieve" data-caption="Matterhorn · Suiza / Italia · 4.478 m" />
+          <img src="assets/images/nosotros4.jpg" alt="Alpinistas subiendo una pared rocosa nevada" data-caption="Denali · Alaska · 6.190 m" />
+          <img src="assets/images/nosotros5.jpg" alt="Alpinistas subiendo una pared rocosa nevada" data-caption="Kilimanjaro · Tanzania · 5.895 m" />
+          <img src="assets/images/nosotros6.jpg" alt="Alpinistas subiendo una pared rocosa nevada" data-caption="Monte Fuji · Japón · 3.776 m" />
         </div>
+        <span class="about-mobile-caption" data-about-mobile-caption>Monte Everest · Nepal / Tíbet · 8.849 m</span>
         <div class="about-copy animate-left" data-animate>
           <p class="eyebrow">Sobre nosotros</p>
           <h2><span>La montaña no perdona</span><span>la improvisación</span></h2>
@@ -116,17 +118,9 @@
         </div>
       </section>
 
-      <section class="cta" id="desafio">
-        <video class="cta-media" src="assets/images/video.mp4" muted loop playsinline aria-hidden="true" data-cta-image></video>
-        <div class="cta-content" data-animate>
-          <h2>Demostrá de qué estás hecho</h2>
-          <p>La montaña te está esperando<br />¿vos estás listo?</p>
-          <a class="outline-btn" href="#cursos">Ver cursos</a>
-        </div>
-      </section>
-
-      <section class="summit-showcase section-pad" aria-labelledby="summit-showcase-title" data-summit-carousel>
+      <section class="summit-showcase section-pad" id="expediciones" aria-labelledby="summit-showcase-title" data-summit-carousel>
         <div class="summit-copy" data-animate>
+          <p class="eyebrow summit-eyebrow">Expediciones realizadas</p>
           <span class="summit-number" data-summit-number>01</span>
           <div class="summit-text-window">
             <div class="summit-text-slide is-active" data-summit-copy>
@@ -150,12 +144,34 @@
             <button type="button" aria-label="Ver cumbre 5" data-summit-dot></button>
             <button type="button" aria-label="Ver cumbre 6" data-summit-dot></button>
           </div>
+          <div class="summit-arrows" aria-label="Cambiar expedición">
+            <button type="button" aria-label="Ver expedición anterior" data-summit-prev>
+              <svg class="summit-arrow-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 5 5.6 11.4l1.4 1.4 4-4V20h2V8.8l4 4 1.4-1.4L12 5Z"></path>
+              </svg>
+            </button>
+            <button type="button" aria-label="Ver expedición siguiente" data-summit-next>
+              <svg class="summit-arrow-icon is-down" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 5 5.6 11.4l1.4 1.4 4-4V20h2V8.8l4 4 1.4-1.4L12 5Z"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta" id="desafio">
+        <video class="cta-media" src="assets/images/video.mp4" muted loop playsinline aria-hidden="true" data-cta-image></video>
+        <div class="cta-content" data-animate>
+          <h2>Demostrá de qué estás hecho</h2>
+          <p>La montaña te está esperando<br />¿vos estás listo?</p>
+          <a class="outline-btn" href="#cursos">Ver cursos</a>
         </div>
       </section>
 
       <section class="team section-pad" id="equipo">
         <div class="team-copy animate-left" data-animate>
-          <h2>Nuestro equipo</h2>
+          <p class="eyebrow team-eyebrow">NUESTRO EQUIPO</p>
+          <h2>Guías y entrenadores</h2>
           <p>En Cúspides reunimos entrenadores, guías de montaña y especialistas que trabajan de manera coordinada para llevar a cada integrante más allá de sus límites habituales.</p>
           <div class="stats">
             <div><strong data-count="10">0</strong><span>Miembros<br />del equipo</span></div>
@@ -356,56 +372,101 @@
         </div>
       </section>
 
-      <section class="courses course-route" id="cursos" aria-labelledby="courses-title">
-        <img class="course-route-bg" src="assets/images/byn.png" alt="" aria-hidden="true" />
-        <h2 id="courses-title" data-animate>Nuestros cursos</h2>
-        <img class="course-route-front" src="assets/images/bypng.png" alt="" aria-hidden="true" />
-
-        <div class="course-point phase-03" data-animate>
-          <button class="course-marker" type="button" aria-expanded="false" aria-controls="course-cuspide" data-course-toggle>
-            <span>Fase 03</span>
-          </button>
-          <article class="course-info" id="course-cuspide">
-            <h3>Programa Cúspide</h3>
-            <strong>Duración: 10 semanas</strong>
-            <p>En la etapa final, incorpora conocimientos técnicos y estrategias que te permitirán desenvolverte con seguridad en la montaña.</p>
-            <div class="course-price" aria-label="Precio con descuento: $390.000. Precio anterior: $450.000.">
-              <span>$450.000</span>
-              <b>$390.000</b>
+      <section class="courses method-section" aria-labelledby="method-title">
+        <div class="method-visual" aria-label="Método Cúspides en tres etapas">
+          <div class="method-head" data-animate>
+            <div>
+              <h2 id="method-title">Método<br />Cúspides</h2>
+              <p>No se trata solo de entrenar para alcanzar una cima, sino de construir la resistencia, la técnica y la claridad mental necesarias para responder cuando la montaña exige más.</p>
             </div>
-            <span class="course-detail-link is-disabled" aria-disabled="true">Ver programa</span>
+            <span class="method-link method-label">Conocé este método</span>
+          </div>
+          <div class="method-blue-frame" aria-hidden="true">
+            <img class="method-bg" src="assets/images/secciónfondo.png" alt="" />
+          </div>
+          <div class="method-cutout-mask" aria-hidden="true">
+            <img class="method-cutout" src="assets/images/secciónarriba.png" alt="" />
+          </div>
+          <div class="method-altitude" aria-hidden="true">
+            <span>6000 M</span>
+            <span>5000 M</span>
+            <span>4000 M</span>
+            <span>3000 M</span>
+            <span>2000 M</span>
+            <span>1000 M</span>
+          </div>
+          <button class="method-dot dot-03" type="button" aria-label="Ver Preparación" data-method-dot="03"></button>
+          <button class="method-dot dot-02" type="button" aria-label="Ver Entrenamiento" data-method-dot="02"></button>
+          <button class="method-dot dot-01" type="button" aria-label="Ver Diagnóstico" data-method-dot="01"></button>
+
+          <article class="method-step step-03" data-method-step="03">
+            <h3><button type="button" data-method-toggle="03" aria-expanded="false">03 Preparación</button></h3>
+            <p>Evaluamos tu punto de partida físico, técnico y mental.</p>
+          </article>
+          <article class="method-step step-02" data-method-step="02">
+            <h3><button type="button" data-method-toggle="02" aria-expanded="false">02 Entrenamiento</button></h3>
+            <p>Construimos resistencia, fuerza y hábitos para sostener el esfuerzo.</p>
+          </article>
+          <article class="method-step step-01" data-method-step="01">
+            <h3><button type="button" data-method-toggle="01" aria-expanded="false">01 Diagnóstico</button></h3>
+            <p>Simulamos exigencias reales: terreno y toma de decisiones.</p>
           </article>
         </div>
+      </section>
 
-        <div class="course-point phase-02" data-animate>
-          <button class="course-marker" type="button" aria-expanded="false" aria-controls="course-ascenso" data-course-toggle>
-            <span>Fase 02</span>
-          </button>
-          <article class="course-info" id="course-ascenso">
-            <h3>Programa Ascenso</h3>
-            <strong>Duración: 8 semanas</strong>
+      <section class="course-groups section-pad" id="cursos" aria-labelledby="course-groups-title">
+        <div class="section-heading" data-animate>
+          <h2 id="course-groups-title">Nuestros cursos</h2>
+          <p>Elegí la fase que mejor acompaña tu preparación actual.</p>
+        </div>
+        <div class="course-groups-grid" data-animate>
+          <article class="mini-plan">
+            <span>Programa Base</span>
+            <small>Fase 01</small>
+            <div class="price-lockup">
+              <em>$220.000</em>
+              <strong>$180.000</strong>
+            </div>
+            <ul>
+              <li>Intensidad baja</li>
+              <li>Modalidad presencial</li>
+              <li>Duración 6 semanas</li>
+              <li>Fecha de inicio: 01/06/26</li>
+            </ul>
+            <p>Desarrollá disciplina, resiliencia<br />y concentración para enfrentar<br />la montaña</p>
+            <a class="outline-btn small" href="#cursos">Ver programa</a>
+          </article>
+          <article class="mini-plan">
+            <span>Programa Ascenso</span>
+            <small>Fase 02</small>
+            <div class="price-lockup">
+              <em>$310.000</em>
+              <strong>$260.000</strong>
+            </div>
+            <ul>
+              <li>Intensidad media</li>
+              <li>Modalidad presencial</li>
+              <li>Duración 8 semanas</li>
+              <li>Fecha de inicio: 15/07/26</li>
+            </ul>
             <p>Desarrolla la condición física, la resistencia y los hábitos que sostendrás en cada etapa del proceso.</p>
-            <div class="course-price" aria-label="Precio con descuento: $260.000. Precio anterior: $310.000.">
-              <span>$310.000</span>
-              <b>$260.000</b>
-            </div>
-            <a class="course-detail-link" href="programa-ascenso.html" data-detail-page-link>Ver programa</a>
+            <a class="outline-btn small" href="programa-ascenso.html" data-detail-page-link>Ver programa</a>
           </article>
-        </div>
-
-        <div class="course-point phase-01" data-animate>
-          <button class="course-marker" type="button" aria-expanded="false" aria-controls="course-base" data-course-toggle>
-            <span>Fase 01</span>
-          </button>
-          <article class="course-info" id="course-base">
-            <h3>Programa BASE</h3>
-            <strong>Duración: 6 semanas</strong>
-            <p>Aprende a gestionar la incertidumbre, afrontar situaciones exigentes y sostener el rendimiento incluso cuando las condiciones no son favorables.</p>
-            <div class="course-price" aria-label="Precio con descuento: $180.000. Precio anterior: $220.000.">
-              <span>$220.000</span>
-              <b>$180.000</b>
+          <article class="mini-plan">
+            <span>Programa Cúspide</span>
+            <small>Fase 03</small>
+            <div class="price-lockup">
+              <em>$450.000</em>
+              <strong>$390.000</strong>
             </div>
-            <span class="course-detail-link is-disabled" aria-disabled="true">Ver programa</span>
+            <ul>
+              <li>Intensidad alta</li>
+              <li>Modalidad presencial</li>
+              <li>Duración 10 semanas</li>
+              <li>Fecha de inicio: 07/09/26</li>
+            </ul>
+            <p>Integra preparación física, mental<br />y técnica para afrontar<br />expediciones reales</p>
+            <a class="outline-btn small" href="#cursos">Ver programa</a>
           </article>
         </div>
       </section>
@@ -473,7 +534,7 @@
       <section class="contact-info section-pad" id="contacto">
         <div class="contact-head" data-animate>
           <h2>Contacto</h2>
-          <p>Dejanos tus datos y el equipo de Cúspides te orienta para elegir programa, resolver dudas de inscripción o coordinar una entrevista inicial.</p>
+          <p>Escribinos y te orientamos para elegir tu programa.</p>
         </div>
 
         <div class="contact-grid">
@@ -527,37 +588,40 @@
           </div>
         </div>
 
-        <div class="map-section" id="ubicacion" data-animate>
-          <div>
-            <h3>Ubicación</h3>
+        <section class="location-faq-section" id="ubicacion" aria-labelledby="location-faq-title" data-animate>
+          <span class="anchor-offset" id="preguntas" aria-hidden="true"></span>
+          <div class="map-section">
+            <div>
+              <h3 id="location-faq-title">Ubicación</h3>
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&query=FADU%20UBA%20Ciudad%20Universitaria%20Buenos%20Aires" target="_blank" rel="noreferrer">Abrir en Maps</a>
+            <iframe title="Mapa de FADU UBA" src="https://www.google.com/maps?q=FADU%20UBA%20Ciudad%20Universitaria%20Buenos%20Aires&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
-          <a href="https://www.google.com/maps/search/?api=1&query=FADU%20UBA%20Ciudad%20Universitaria%20Buenos%20Aires" target="_blank" rel="noreferrer">Abrir en Maps</a>
-          <iframe title="Mapa de FADU UBA" src="https://www.google.com/maps?q=FADU%20UBA%20Ciudad%20Universitaria%20Buenos%20Aires&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
 
-        <div class="faq-section" id="preguntas" data-animate>
-          <div class="faq-title">
-            <h2>Preguntas frecuentes</h2>
+          <div class="faq-section">
+            <div class="faq-title">
+              <h2>Preguntas frecuentes</h2>
+            </div>
+            <div class="faq-list">
+              <details open>
+                <summary>¿Qué programa me conviene elegir?</summary>
+                <p>Base es ideal para empezar, Ascenso para mejorar rendimiento y Cúspide para quienes ya entrenan y buscan autonomía técnica.</p>
+              </details>
+              <details>
+                <summary>Necesito experiencia previa?</summary>
+                <p>No para Programa Base. Para Ascenso y Cúspide recomendamos una entrevista inicial para revisar tu estado físico y experiencia.</p>
+              </details>
+              <details>
+                <summary>¿Dónde se realizan las clases?</summary>
+                <p>La coordinación y encuentros principales son en FADU UBA, con salidas y prácticas según el programa elegido.</p>
+              </details>
+              <details>
+                <summary>¿Cómo inicio la inscripción?</summary>
+                <p>Completás el formulario, nos contás tu objetivo y te respondemos dentro de las 24 hs hábiles con el siguiente paso.</p>
+              </details>
+            </div>
           </div>
-          <div class="faq-list">
-            <details open>
-              <summary>¿Qué programa me conviene elegir?</summary>
-              <p>Base es ideal para empezar, Ascenso para mejorar rendimiento y Cúspide para quienes ya entrenan y buscan autonomía técnica.</p>
-            </details>
-            <details>
-              <summary>Necesito experiencia previa?</summary>
-              <p>No para Programa Base. Para Ascenso y Cúspide recomendamos una entrevista inicial para revisar tu estado físico y experiencia.</p>
-            </details>
-            <details>
-              <summary>¿Dónde se realizan las clases?</summary>
-              <p>La coordinación y encuentros principales son en FADU UBA, con salidas y prácticas según el programa elegido.</p>
-            </details>
-            <details>
-              <summary>¿Cómo inicio la inscripción?</summary>
-              <p>Completás el formulario, nos contás tu objetivo y te respondemos dentro de las 24 hs hábiles con el siguiente paso.</p>
-            </details>
-          </div>
-        </div>
+        </section>
       </section>
     </main>
 
