@@ -4670,6 +4670,15 @@ main,
   max-width: 18%;
 }
 
+.rope-copy p {
+  white-space: nowrap;
+}
+
+.rope-copy-mobile,
+.crampons-copy-mobile {
+  display: none;
+}
+
 .pack-copy {
   right: 0.6%;
   top: 3%;
@@ -6853,12 +6862,28 @@ main > .team {
     line-height: 1.15;
     text-transform: uppercase;
     cursor: pointer;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
     transform: translateX(-50%);
-    transition: opacity 0.2s ease;
+    transition: opacity 0.2s ease, visibility 0s linear 0s;
   }
 
   .program-detail-page .kit-board.is-info-open .kit-prompt {
     opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.2s ease, visibility 0s linear 0.2s;
+  }
+
+  .rope-copy-desktop,
+  .crampons-copy-desktop {
+    display: none;
+  }
+
+  .rope-copy-mobile,
+  .crampons-copy-mobile {
+    display: block;
   }
 
   .program-detail-page .kit-label {
@@ -6876,8 +6901,15 @@ main > .team {
     transform: translateY(8px);
   }
 
+  .program-detail-page .kit-label:not(.is-active) {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+  }
+
   .program-detail-page .kit-label.is-active {
     opacity: 1;
+    visibility: visible;
     transform: translateY(0);
   }
 
