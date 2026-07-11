@@ -7,13 +7,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,300..900&family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=20260709-1" />
   </head>
   <body>
     <div class="cursor-follower" aria-hidden="true"></div>
     <header class="site-header" data-header>
       <a class="brand" href="#home" aria-label="Cúspides inicio">
-        <img src="assets/images/LOGO.png" alt="Cúspides" />
+        <img src="assets/images/LOGOFINAL2.png" alt="Cúspides" />
       </a>
       <a class="search-link" href="#cursos" aria-label="Buscar cursos">
         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m16.5 16.5 4 4"></path></svg>
@@ -30,13 +30,15 @@
         <a href="#expediciones">EXPEDICIONES</a>
         <a href="#equipo">EQUIPO</a>
         <div class="nav-course-menu">
-          <button class="nav-course-trigger" type="button" aria-expanded="false" data-nav-course-toggle>
-            <span>CURSOS</span>
-            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4"></path></svg>
-          </button>
+          <div class="nav-course-trigger">
+            <a class="nav-course-main-link" href="#cursos">CURSOS</a>
+            <button class="nav-course-arrow" type="button" aria-label="Mostrar programas" aria-expanded="false" data-nav-course-toggle>
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4"></path></svg>
+            </button>
+          </div>
           <div class="nav-course-dropdown" aria-label="Cursos disponibles">
             <a href="#cursos">Programa Base</a>
-            <a class="is-ascenso" href="programa-ascenso.html" data-detail-page-link>Programa Ascenso</a>
+            <a class="is-ascenso" href="./programa-ascenso.html" target="_self" onpointerdown="event.preventDefault(); event.stopPropagation(); window.location.assign('./programa-ascenso.html');">Programa Ascenso</a>
             <a href="#cursos">Programa Cúspide</a>
           </div>
         </div>
@@ -63,7 +65,7 @@
 
       <section class="benefits section-pad" id="beneficios">
         <div class="section-heading compact">
-          <h2>Beneficios del alpinismo</h2>
+          <h2>Beneficios <br class="mobile-line-break" />del alpinismo</h2>
         </div>
         <div class="benefit-grid">
           <article class="benefit">
@@ -136,6 +138,7 @@
           <div class="summit-image-window">
             <img class="is-active" src="assets/images/montana1.png" alt="Montañista avanzando por una arista nevada" data-summit-image />
           </div>
+          <small class="summit-mobile-meta" data-summit-mobile-meta>Nepal / Tíbet - 8.849 m</small>
           <div class="summit-dots" aria-label="Cumbres destacadas">
             <button class="on" type="button" aria-label="Ver cumbre 1" data-summit-dot></button>
             <button type="button" aria-label="Ver cumbre 2" data-summit-dot></button>
@@ -372,6 +375,7 @@
         </div>
       </section>
 
+      <div class="post-team-flow">
       <section class="courses method-section" aria-labelledby="method-title">
         <div class="method-visual" aria-label="Método Cúspides en tres etapas">
           <div class="method-head" data-animate>
@@ -387,7 +391,7 @@
           <div class="method-cutout-mask" aria-hidden="true">
             <img class="method-cutout" src="assets/images/secciónarriba.png" alt="" />
           </div>
-          <div class="method-altitude" aria-hidden="true">
+          <div class="method-altitude animate-left" aria-hidden="true" data-animate>
             <span>6000 M</span>
             <span>5000 M</span>
             <span>4000 M</span>
@@ -399,17 +403,17 @@
           <button class="method-dot dot-02" type="button" aria-label="Ver Entrenamiento" data-method-dot="02"></button>
           <button class="method-dot dot-01" type="button" aria-label="Ver Diagnóstico" data-method-dot="01"></button>
 
-          <article class="method-step step-03" data-method-step="03">
+          <article class="method-step step-03 animate-right" data-method-step="03" data-animate>
             <h3><button type="button" data-method-toggle="03" aria-expanded="false">03 Preparación</button></h3>
-            <p>Evaluamos tu punto de partida físico, técnico y mental.</p>
+            <p>Evaluamos tu punto de partida <br class="mobile-line-break" />físico, técnico y mental.</p>
           </article>
-          <article class="method-step step-02" data-method-step="02">
+          <article class="method-step step-02 animate-right" data-method-step="02" data-animate>
             <h3><button type="button" data-method-toggle="02" aria-expanded="false">02 Entrenamiento</button></h3>
-            <p>Construimos resistencia, fuerza y hábitos para sostener el esfuerzo.</p>
+            <p>Construimos resistencia, fuerza y <br class="mobile-line-break" />hábitos para sostener el esfuerzo.</p>
           </article>
-          <article class="method-step step-01" data-method-step="01">
+          <article class="method-step step-01 animate-right" data-method-step="01" data-animate>
             <h3><button type="button" data-method-toggle="01" aria-expanded="false">01 Diagnóstico</button></h3>
-            <p>Simulamos exigencias reales: terreno y toma de decisiones.</p>
+            <p>Simulamos exigencias reales: terreno <br class="mobile-line-break" />y toma de decisiones.</p>
           </article>
         </div>
       </section>
@@ -419,55 +423,72 @@
           <h2 id="course-groups-title">Nuestros cursos</h2>
           <p>Elegí la fase que mejor acompaña tu preparación actual.</p>
         </div>
-        <div class="course-groups-grid" data-animate>
-          <article class="mini-plan">
-            <span>Programa Base</span>
-            <small>Fase 01</small>
-            <div class="price-lockup">
-              <em>$220.000</em>
-              <strong>$180.000</strong>
+        <div class="course-groups-viewport">
+          <button class="course-side-arrow is-prev" type="button" aria-label="Ver programa anterior" data-course-prev>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7"></path></svg>
+          </button>
+          <div class="course-groups-clip">
+            <div class="course-groups-grid" data-animate data-course-track>
+              <article class="mini-plan">
+                <span>Programa Base</span>
+                <small>Fase 01</small>
+                <div class="price-lockup">
+                  <em>$220.000</em>
+                  <strong>$180.000</strong>
+                </div>
+                <ul>
+                  <li>Intensidad baja</li>
+                  <li>Modalidad presencial</li>
+                  <li>Duración 6 semanas</li>
+                  <li>Fecha de inicio: 01/06/26</li>
+                </ul>
+                <p>Desarrollá disciplina, resiliencia<br />y concentración para enfrentar<br />la montaña</p>
+                <a class="outline-btn small" href="#cursos">Ver programa</a>
+              </article>
+              <article class="mini-plan">
+                <span>Programa Ascenso</span>
+                <small>Fase 02</small>
+                <div class="price-lockup">
+                  <em>$310.000</em>
+                  <strong>$260.000</strong>
+                </div>
+                <ul>
+                  <li>Intensidad media</li>
+                  <li>Modalidad presencial</li>
+                  <li>Duración 8 semanas</li>
+                  <li>Fecha de inicio: 15/07/26</li>
+                </ul>
+                <p>Desarrolla la condición física, la resistencia y los hábitos que sostendrás en cada etapa del proceso.</p>
+                <a class="outline-btn small" href="programa-ascenso.html" data-detail-page-link>Ver programa</a>
+              </article>
+              <article class="mini-plan">
+                <span>Programa Cúspide</span>
+                <small>Fase 03</small>
+                <div class="price-lockup">
+                  <em>$450.000</em>
+                  <strong>$390.000</strong>
+                </div>
+                <ul>
+                  <li>Intensidad alta</li>
+                  <li>Modalidad presencial</li>
+                  <li>Duración 10 semanas</li>
+                  <li>Fecha de inicio: 07/09/26</li>
+                </ul>
+                <p>Integra preparación física, mental<br />y técnica para afrontar<br />expediciones reales</p>
+                <a class="outline-btn small" href="#cursos">Ver programa</a>
+              </article>
             </div>
-            <ul>
-              <li>Intensidad baja</li>
-              <li>Modalidad presencial</li>
-              <li>Duración 6 semanas</li>
-              <li>Fecha de inicio: 01/06/26</li>
-            </ul>
-            <p>Desarrollá disciplina, resiliencia<br />y concentración para enfrentar<br />la montaña</p>
-            <a class="outline-btn small" href="#cursos">Ver programa</a>
-          </article>
-          <article class="mini-plan">
-            <span>Programa Ascenso</span>
-            <small>Fase 02</small>
-            <div class="price-lockup">
-              <em>$310.000</em>
-              <strong>$260.000</strong>
-            </div>
-            <ul>
-              <li>Intensidad media</li>
-              <li>Modalidad presencial</li>
-              <li>Duración 8 semanas</li>
-              <li>Fecha de inicio: 15/07/26</li>
-            </ul>
-            <p>Desarrolla la condición física, la resistencia y los hábitos que sostendrás en cada etapa del proceso.</p>
-            <a class="outline-btn small" href="programa-ascenso.html" data-detail-page-link>Ver programa</a>
-          </article>
-          <article class="mini-plan">
-            <span>Programa Cúspide</span>
-            <small>Fase 03</small>
-            <div class="price-lockup">
-              <em>$450.000</em>
-              <strong>$390.000</strong>
-            </div>
-            <ul>
-              <li>Intensidad alta</li>
-              <li>Modalidad presencial</li>
-              <li>Duración 10 semanas</li>
-              <li>Fecha de inicio: 07/09/26</li>
-            </ul>
-            <p>Integra preparación física, mental<br />y técnica para afrontar<br />expediciones reales</p>
-            <a class="outline-btn small" href="#cursos">Ver programa</a>
-          </article>
+          </div>
+          <button class="course-side-arrow is-next" type="button" aria-label="Ver programa siguiente" data-course-next>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"></path></svg>
+          </button>
+        </div>
+        <div class="course-groups-controls" aria-label="Programas disponibles">
+          <div class="dots centered">
+            <button class="on" type="button" aria-label="Ver Programa Base" data-course-dot></button>
+            <button type="button" aria-label="Ver Programa Ascenso" data-course-dot></button>
+            <button type="button" aria-label="Ver Programa Cúspide" data-course-dot></button>
+          </div>
         </div>
       </section>
 
@@ -534,7 +555,7 @@
       <section class="contact-info section-pad" id="contacto">
         <div class="contact-head" data-animate>
           <h2>Contacto</h2>
-          <p>Escribinos y te orientamos para elegir tu programa.</p>
+          <p>Escribinos y te orientamos para <br class="mobile-line-break" />elegir tu programa.</p>
         </div>
 
         <div class="contact-grid">
@@ -587,8 +608,9 @@
             </article>
           </div>
         </div>
+      </section>
 
-        <section class="location-faq-section" id="ubicacion" aria-labelledby="location-faq-title" data-animate>
+      <section class="location-faq-section section-pad" id="ubicacion" aria-labelledby="location-faq-title" data-animate>
           <span class="anchor-offset" id="preguntas" aria-hidden="true"></span>
           <div class="map-section">
             <div>
@@ -621,8 +643,8 @@
               </details>
             </div>
           </div>
-        </section>
       </section>
+      </div>
     </main>
 
     <footer class="footer">
@@ -684,6 +706,6 @@
       </svg>
     </a>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=20260709-1"></script>
   </body>
 </html>

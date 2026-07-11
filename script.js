@@ -2,7 +2,7 @@ const header = document.querySelector("[data-header]");
 const menuToggle = document.querySelector("[data-menu-toggle]");
 const nav = document.querySelector("[data-nav]");
 const navCourseToggles = [...document.querySelectorAll("[data-nav-course-toggle]")];
-const detailPageLinks = [...document.querySelectorAll("[data-detail-page-link]")];
+const ascensoMenuLink = document.querySelector(".nav-course-dropdown .is-ascenso");
 const navLinks = [...document.querySelectorAll(".main-nav a[href^='#']:not(.search-link)")];
 const hero = document.querySelector(".hero");
 const heroTitle = document.querySelector("[data-hero-title]");
@@ -24,9 +24,15 @@ const coachCards = [...document.querySelectorAll(".coach-card")];
 const profileActions = [...document.querySelectorAll(".profile-action")];
 const testimonialTrack = document.querySelector("[data-testimonial-track]");
 const testimonialDots = [...document.querySelectorAll("[data-testimonial-dot]")];
+const courseTrack = document.querySelector("[data-course-track]");
+const courseDots = [...document.querySelectorAll("[data-course-dot]")];
+const coursePrev = document.querySelector("[data-course-prev]");
+const courseNext = document.querySelector("[data-course-next]");
 const weekCarousel = document.querySelector("[data-week-carousel]");
+const weekPlan = document.querySelector(".week-plan");
 const summitCarousel = document.querySelector("[data-summit-carousel]");
 const planStack = document.querySelector("[data-plan-stack]");
+const kitBoard = document.querySelector("[data-kit-board]");
 const methodSteps = [...document.querySelectorAll("[data-method-step]")];
 const methodToggles = [...document.querySelectorAll("[data-method-toggle]")];
 const methodDots = [...document.querySelectorAll("[data-method-dot]")];
@@ -43,38 +49,65 @@ let heroDepthFrame = null;
 let coachPressedCard = null;
 let coachPressX = 0;
 let coachPressY = 0;
+let weekPlanResizeFrame = null;
 
-detailPageLinks.forEach((link) => {
-  link.addEventListener("click", (event) => {
-    event.preventDefault();
-    window.location.assign(link.href);
-  }, { capture: true });
+const syncWeekPlanStickyTop = () => {
+  if (!weekPlan) return;
+
+  const stickyTop = Math.min(0, window.innerHeight - weekPlan.offsetHeight);
+  weekPlan.style.setProperty("--week-sticky-top", `${stickyTop}px`);
+};
+
+syncWeekPlanStickyTop();
+window.addEventListener("load", syncWeekPlanStickyTop);
+window.addEventListener("resize", () => {
+  cancelAnimationFrame(weekPlanResizeFrame);
+  weekPlanResizeFrame = requestAnimationFrame(syncWeekPlanStickyTop);
 });
 
-const setActiveMethodStep = (stepId, forceOpen = false) => {
+ascensoMenuLink?.addEventListener(
+  "click",
+  (event) => {
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    window.location.assign(new URL("programa-ascenso.html", document.baseURI).href);
+  },
+  true
+);
+
+const syncMethodControls = () => {
   methodSteps.forEach((step) => {
-    const isOpen = step.dataset.methodStep === stepId && (forceOpen || !step.classList.contains("is-open"));
-    step.classList.toggle("is-open", isOpen);
-  });
+    const stepId = step.dataset.methodStep;
+    const isOpen = step.classList.contains("is-open");
 
-  methodToggles.forEach((toggle) => {
-    toggle.setAttribute("aria-expanded", String(
-      toggle.dataset.methodToggle === stepId &&
-      methodSteps.some((step) => step.dataset.methodStep === stepId && step.classList.contains("is-open"))
-    ));
-  });
+    methodToggles
+      .filter((toggle) => toggle.dataset.methodToggle === stepId)
+      .forEach((toggle) => toggle.setAttribute("aria-expanded", String(isOpen)));
 
-  methodDots.forEach((dot) => {
-    dot.classList.toggle("is-open", dot.dataset.methodDot === stepId && methodSteps.some((step) => step.dataset.methodStep === stepId && step.classList.contains("is-open")));
+    methodDots
+      .filter((dot) => dot.dataset.methodDot === stepId)
+      .forEach((dot) => dot.classList.toggle("is-open", isOpen));
   });
 };
 
+const toggleMethodStep = (stepId) => {
+  const step = methodSteps.find((item) => item.dataset.methodStep === stepId);
+  step?.classList.toggle("is-open");
+  syncMethodControls();
+};
+
 methodToggles.forEach((toggle) => {
-  toggle.addEventListener("click", () => setActiveMethodStep(toggle.dataset.methodToggle));
+  toggle.addEventListener("click", () => toggleMethodStep(toggle.dataset.methodToggle));
 });
 
 methodDots.forEach((dot) => {
-  dot.addEventListener("click", () => setActiveMethodStep(dot.dataset.methodDot, true));
+  dot.addEventListener("click", () => toggleMethodStep(dot.dataset.methodDot));
+});
+
+document.addEventListener("click", (event) => {
+  if (event.target.closest(".method-step, .method-dot")) return;
+  methodSteps.forEach((step) => step.classList.remove("is-open"));
+  syncMethodControls();
 });
 
 aboutGalleryImages.forEach((image) => {
@@ -108,7 +141,7 @@ aboutGalleryImages.forEach((image) => {
 
     timer = setInterval(() => {
       setImage((index + 1) % images.length);
-    }, 1500);
+    }, 1250);
   });
 
   image.addEventListener("pointerleave", stopGallery);
@@ -128,7 +161,7 @@ if (aboutMobileGallery) {
       if (caption) {
         caption.textContent = images[index].dataset.caption || "";
       }
-    }, 1800);
+    }, 1250);
   }
 }
 
@@ -482,6 +515,66 @@ const testimonialCarousel = createCarousel({
   dotLabel: "testimonios"
 });
 
+const createCourseCarousel = () => {
+  if (!courseTrack || !courseDots.length) return null;
+
+  const cards = [...courseTrack.querySelectorAll(".mini-plan")];
+  if (!cards.length) return null;
+
+  let active = 0;
+  let startX = 0;
+  let dragX = 0;
+  let dragging = false;
+
+  const setActive = (next) => {
+    active = (next + cards.length) % cards.length;
+    courseTrack.style.setProperty("--course-shift", `${active * -33.333333}%`);
+    courseTrack.style.setProperty("--course-drag", "0px");
+    courseDots.forEach((dot, index) => {
+      dot.classList.toggle("on", index === active);
+      dot.setAttribute("aria-current", index === active ? "true" : "false");
+    });
+  };
+
+  const dragStart = (event) => {
+    dragging = true;
+    startX = event.clientX;
+    dragX = 0;
+    courseTrack.setPointerCapture?.(event.pointerId);
+  };
+
+  const dragMove = (event) => {
+    if (!dragging) return;
+    dragX = event.clientX - startX;
+    courseTrack.style.setProperty("--course-drag", `${dragX}px`);
+  };
+
+  const dragEnd = () => {
+    if (!dragging) return;
+    const shouldSlide = Math.abs(dragX) > 70;
+    const direction = dragX < 0 ? 1 : -1;
+    dragging = false;
+    setActive(shouldSlide ? active + direction : active);
+  };
+
+  courseDots.forEach((dot, index) => {
+    dot.addEventListener("click", () => setActive(index));
+  });
+  coursePrev?.addEventListener("click", () => setActive(active - 1));
+  courseNext?.addEventListener("click", () => setActive(active + 1));
+  courseTrack.addEventListener("pointerdown", dragStart);
+  courseTrack.addEventListener("pointermove", dragMove);
+  courseTrack.addEventListener("pointerup", dragEnd);
+  courseTrack.addEventListener("pointercancel", dragEnd);
+  courseTrack.addEventListener("lostpointercapture", dragEnd);
+  window.addEventListener("resize", () => setActive(active));
+
+  setActive(0);
+  return { setActive };
+};
+
+createCourseCarousel();
+
 const createDepthCarousel = (carousel) => {
   if (!carousel) return null;
 
@@ -491,12 +584,13 @@ const createDepthCarousel = (carousel) => {
   const prevButton = carousel.querySelector("[data-week-prev]");
   const nextButton = carousel.querySelector("[data-week-next]");
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-  let active = cards.length > 2 ? 2 : 0;
+  let active = 0;
   let timer = null;
   let startX = 0;
   let dragX = 0;
   let isDragging = false;
   let pressedCard = null;
+  let isInView = false;
 
   const signedOffset = (index) => {
     const total = cards.length;
@@ -537,7 +631,7 @@ const createDepthCarousel = (carousel) => {
 
   const start = () => {
     stop();
-    if (reducedMotion.matches) return;
+    if (!isInView || reducedMotion.matches) return;
     timer = setInterval(() => setActive(active + 1), 3200);
   };
 
@@ -606,7 +700,25 @@ const createDepthCarousel = (carousel) => {
   carousel.addEventListener("focusout", start);
 
   setActive(active);
-  start();
+
+  const viewObserver = new IntersectionObserver(
+    ([entry]) => {
+      isInView = entry.isIntersecting;
+
+      if (isInView) {
+        setActive(0);
+        start();
+      } else {
+        stop();
+      }
+    },
+    {
+      rootMargin: "0px 0px -18% 0px",
+      threshold: 0.25
+    }
+  );
+
+  viewObserver.observe(carousel);
 
   return {
     refresh: () => setActive(active)
@@ -672,6 +784,7 @@ const createSummitCarousel = (carousel) => {
   const currentCopy = carousel.querySelector("[data-summit-copy]");
   const imageWindow = carousel.querySelector(".summit-image-window");
   const currentImage = carousel.querySelector("[data-summit-image]");
+  const mobileMeta = carousel.querySelector("[data-summit-mobile-meta]");
   const dots = [...carousel.querySelectorAll("[data-summit-dot]")];
   const previousButton = carousel.querySelector("[data-summit-prev]");
   const nextButton = carousel.querySelector("[data-summit-next]");
@@ -732,6 +845,7 @@ const createSummitCarousel = (carousel) => {
 
     requestAnimationFrame(() => {
       number.textContent = slide.number;
+      if (mobileMeta) mobileMeta.textContent = slide.meta;
       carousel.classList.remove("is-switching");
       leavingCopy?.classList.remove("is-active");
       leavingCopy?.classList.add("is-leaving");
@@ -992,24 +1106,12 @@ nav.addEventListener("click", (event) => {
   const link = event.target.closest("a");
 
   if (link) {
-    const href = link.getAttribute("href") || "";
-    const isMobileNav = window.matchMedia("(max-width: 960px)").matches;
-    const isCoursePageLink = Boolean(link.closest(".nav-course-dropdown")) && href && !href.startsWith("#");
-
-    if (isMobileNav && isCoursePageLink) {
-      event.preventDefault();
-    }
-
     nav.classList.remove("open");
     menuToggle.setAttribute("aria-expanded", "false");
     navCourseToggles.forEach((toggle) => {
       toggle.closest(".nav-course-menu")?.classList.remove("is-open");
       toggle.setAttribute("aria-expanded", "false");
     });
-
-    if (isMobileNav && isCoursePageLink) {
-      window.location.href = link.href;
-    }
   }
 });
 
@@ -1044,6 +1146,49 @@ if (planStack) {
       setActivePlan(card);
     });
   });
+}
+
+if (kitBoard) {
+  const kitItems = [...kitBoard.querySelectorAll(".kit-item")];
+  const kitLabels = [...kitBoard.querySelectorAll(".kit-label")];
+  const kitPrev = kitBoard.querySelector("[data-kit-prev]");
+  const kitNext = kitBoard.querySelector("[data-kit-next]");
+  const kitToggle = kitBoard.querySelector("[data-kit-toggle]");
+  let activeKit = 0;
+  let kitInfoOpen = false;
+
+  const setActiveKit = (next, openInfo = false) => {
+    activeKit = (next + kitItems.length) % kitItems.length;
+    kitInfoOpen = openInfo;
+
+    kitItems.forEach((item, index) => {
+      const isActive = index === activeKit;
+      item.classList.toggle("is-active", isActive);
+      item.setAttribute("aria-current", String(isActive));
+    });
+
+    kitLabels.forEach((label, index) => {
+      label.classList.toggle("is-active", index === activeKit && kitInfoOpen);
+    });
+    kitBoard.classList.toggle("is-info-open", kitInfoOpen);
+  };
+
+  kitItems.forEach((item, index) => {
+    item.setAttribute("tabindex", "0");
+    item.setAttribute("role", "button");
+
+    item.addEventListener("click", () => setActiveKit(index, index === activeKit ? !kitInfoOpen : true));
+    item.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter" && event.key !== " ") return;
+      event.preventDefault();
+      setActiveKit(index, index === activeKit ? !kitInfoOpen : true);
+    });
+  });
+
+  kitPrev?.addEventListener("click", () => setActiveKit(activeKit - 1, false));
+  kitNext?.addEventListener("click", () => setActiveKit(activeKit + 1, false));
+  kitToggle?.addEventListener("click", () => setActiveKit(activeKit, !kitInfoOpen));
+  setActiveKit(0, false);
 }
 
 contactForm?.addEventListener("submit", (event) => {
