@@ -6633,6 +6633,7 @@ main > .team {
     display: flex;
     grid-template-columns: none;
     justify-content: flex-start;
+    gap: 0;
     width: 100%;
     transform: translateX(calc((var(--detail-team-shift, 0px) * -1) + var(--detail-team-drag, 0px)));
     transition: transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -7062,4 +7063,16 @@ main > .team {
 .flow-steps p {
   font-size: 20px;
   line-height: 1.35;
+}
+
+@media (min-width: 1441px) {
+  .method-head h2 {
+    font-size: clamp(88px, 5.6vw, 108px);
+  }
+
+  .method-head p {
+    max-width: 620px;
+    font-size: clamp(22px, 1.2vw, 25px);
+    line-height: 1.22;
+  }
 }

@@ -28,6 +28,7 @@ const courseTrack = document.querySelector("[data-course-track]");
 const courseDots = [...document.querySelectorAll("[data-course-dot]")];
 const coursePrev = document.querySelector("[data-course-prev]");
 const courseNext = document.querySelector("[data-course-next]");
+const ascensoCardLink = document.querySelector("[data-ascenso-card-link]");
 const weekCarousel = document.querySelector("[data-week-carousel]");
 const weekPlan = document.querySelector(".week-plan");
 const summitCarousel = document.querySelector("[data-summit-carousel]");
@@ -66,6 +67,16 @@ window.addEventListener("resize", () => {
 });
 
 ascensoMenuLink?.addEventListener(
+  "click",
+  (event) => {
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    window.location.assign(new URL("programa-ascenso.html", document.baseURI).href);
+  },
+  true
+);
+
+ascensoCardLink?.addEventListener(
   "click",
   (event) => {
     event.preventDefault();
@@ -537,6 +548,8 @@ const createCourseCarousel = () => {
   };
 
   const dragStart = (event) => {
+    if (event.target.closest("a, button")) return;
+
     dragging = true;
     startX = event.clientX;
     dragX = 0;
